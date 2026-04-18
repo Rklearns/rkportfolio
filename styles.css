@@ -234,6 +234,12 @@ body[data-theme="dark"] .icon-pill:hover {
   fill: currentColor;
 }
 
+.icon-pill svg.pypi-logo {
+  width: 20px;
+  height: 20px;
+  fill: none;
+}
+
 .page {
   width: min(100%, 720px);
   margin: 0 auto;
