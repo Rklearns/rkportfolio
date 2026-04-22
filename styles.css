@@ -240,6 +240,12 @@ body[data-theme="dark"] .icon-pill:hover {
   fill: none;
 }
 
+.icon-link svg.orcid-logo {
+  width: 18px;
+  height: 18px;
+  fill: none;
+}
+
 .page {
   width: min(100%, 720px);
   margin: 0 auto;
