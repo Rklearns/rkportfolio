@@ -194,39 +194,80 @@ body[data-theme="dark"] .theme-moon {
 }
 
 .brand-email {
-  color: #c2410c;
-  background: rgba(251, 146, 60, 0.12);
-  border-color: rgba(251, 146, 60, 0.26);
+  color: #b45309;
+  background: rgba(245, 158, 11, 0.08);
+  border-color: rgba(245, 158, 11, 0.18);
 }
 
 .brand-github {
-  color: #24292f;
-  background: rgba(36, 41, 47, 0.08);
-  border-color: rgba(36, 41, 47, 0.16);
+  color: #374151;
+  background: rgba(55, 65, 81, 0.07);
+  border-color: rgba(55, 65, 81, 0.14);
 }
 
 .brand-linkedin {
   color: #0a66c2;
-  background: rgba(10, 102, 194, 0.1);
-  border-color: rgba(10, 102, 194, 0.2);
+  background: rgba(10, 102, 194, 0.08);
+  border-color: rgba(10, 102, 194, 0.16);
 }
 
 .brand-scholar {
-  color: #4285f4;
-  background: rgba(66, 133, 244, 0.1);
-  border-color: rgba(66, 133, 244, 0.2);
+  color: #4f7dd9;
+  background: rgba(66, 133, 244, 0.08);
+  border-color: rgba(66, 133, 244, 0.16);
 }
 
 .brand-orcid {
-  color: #84b71a;
-  background: rgba(166, 206, 57, 0.14);
-  border-color: rgba(166, 206, 57, 0.26);
+  color: #6f9d14;
+  background: rgba(166, 206, 57, 0.1);
+  border-color: rgba(166, 206, 57, 0.18);
 }
 
 .brand-pypi {
   color: #3775a9;
-  background: linear-gradient(135deg, rgba(55, 117, 169, 0.12), rgba(255, 211, 67, 0.16));
-  border-color: rgba(55, 117, 169, 0.22);
+  background: linear-gradient(135deg, rgba(55, 117, 169, 0.09), rgba(255, 211, 67, 0.12));
+  border-color: rgba(55, 117, 169, 0.16);
+}
+
+.brand-paper {
+  color: #7c5a2b;
+  background: rgba(194, 146, 83, 0.09);
+  border-color: rgba(194, 146, 83, 0.18);
+}
+
+.brand-talk {
+  color: #6d4aff;
+  background: rgba(109, 74, 255, 0.08);
+  border-color: rgba(109, 74, 255, 0.16);
+}
+
+.brand-poster {
+  color: #0f766e;
+  background: rgba(15, 118, 110, 0.08);
+  border-color: rgba(15, 118, 110, 0.16);
+}
+
+.brand-youtube {
+  color: #c1121f;
+  background: rgba(225, 29, 72, 0.08);
+  border-color: rgba(225, 29, 72, 0.16);
+}
+
+.brand-rsvp {
+  color: #7c3aed;
+  background: rgba(124, 58, 237, 0.08);
+  border-color: rgba(124, 58, 237, 0.16);
+}
+
+.brand-doc {
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.08);
+  border-color: rgba(37, 99, 235, 0.16);
+}
+
+.icon-link[class*="brand-"],
+.icon-pill[class*="brand-"] {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 8px 18px rgba(28, 26, 24, 0.03);
 }
 
 .icon-link,
@@ -265,38 +306,79 @@ body[data-theme="dark"] .icon-pill:hover {
 
 body[data-theme="dark"] .brand-email {
   color: #fdba74;
-  background: rgba(251, 146, 60, 0.16);
-  border-color: rgba(251, 146, 60, 0.28);
+  background: rgba(245, 158, 11, 0.14);
+  border-color: rgba(245, 158, 11, 0.24);
 }
 
 body[data-theme="dark"] .brand-github {
-  color: #f3f4f6;
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.18);
+  color: #d1d5db;
+  background: rgba(148, 163, 184, 0.12);
+  border-color: rgba(148, 163, 184, 0.2);
 }
 
 body[data-theme="dark"] .brand-linkedin {
   color: #60a5fa;
-  background: rgba(10, 102, 194, 0.18);
-  border-color: rgba(96, 165, 250, 0.28);
+  background: rgba(10, 102, 194, 0.14);
+  border-color: rgba(96, 165, 250, 0.22);
 }
 
 body[data-theme="dark"] .brand-scholar {
   color: #93c5fd;
-  background: rgba(66, 133, 244, 0.18);
-  border-color: rgba(147, 197, 253, 0.28);
+  background: rgba(66, 133, 244, 0.14);
+  border-color: rgba(147, 197, 253, 0.22);
 }
 
 body[data-theme="dark"] .brand-orcid {
   color: #b8dd67;
-  background: rgba(166, 206, 57, 0.18);
-  border-color: rgba(184, 221, 103, 0.28);
+  background: rgba(166, 206, 57, 0.14);
+  border-color: rgba(184, 221, 103, 0.22);
 }
 
 body[data-theme="dark"] .brand-pypi {
   color: #8ec5ff;
-  background: linear-gradient(135deg, rgba(55, 117, 169, 0.22), rgba(255, 211, 67, 0.14));
-  border-color: rgba(142, 197, 255, 0.26);
+  background: linear-gradient(135deg, rgba(55, 117, 169, 0.18), rgba(255, 211, 67, 0.1));
+  border-color: rgba(142, 197, 255, 0.22);
+}
+
+body[data-theme="dark"] .brand-paper {
+  color: #e9c38c;
+  background: rgba(194, 146, 83, 0.14);
+  border-color: rgba(233, 195, 140, 0.22);
+}
+
+body[data-theme="dark"] .brand-talk {
+  color: #b9a5ff;
+  background: rgba(109, 74, 255, 0.14);
+  border-color: rgba(185, 165, 255, 0.22);
+}
+
+body[data-theme="dark"] .brand-poster {
+  color: #7dd3c7;
+  background: rgba(15, 118, 110, 0.14);
+  border-color: rgba(125, 211, 199, 0.22);
+}
+
+body[data-theme="dark"] .brand-youtube {
+  color: #fda4af;
+  background: rgba(225, 29, 72, 0.14);
+  border-color: rgba(253, 164, 175, 0.22);
+}
+
+body[data-theme="dark"] .brand-rsvp {
+  color: #d8b4fe;
+  background: rgba(124, 58, 237, 0.14);
+  border-color: rgba(216, 180, 254, 0.22);
+}
+
+body[data-theme="dark"] .brand-doc {
+  color: #93c5fd;
+  background: rgba(37, 99, 235, 0.14);
+  border-color: rgba(147, 197, 253, 0.22);
+}
+
+body[data-theme="dark"] .icon-link[class*="brand-"],
+body[data-theme="dark"] .icon-pill[class*="brand-"] {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), 0 8px 18px rgba(0, 0, 0, 0.16);
 }
 
 .icon-link svg,
