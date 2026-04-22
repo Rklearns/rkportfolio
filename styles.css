@@ -193,6 +193,42 @@ body[data-theme="dark"] .theme-moon {
   color: var(--muted-strong);
 }
 
+.brand-email {
+  color: #c2410c;
+  background: rgba(251, 146, 60, 0.12);
+  border-color: rgba(251, 146, 60, 0.26);
+}
+
+.brand-github {
+  color: #24292f;
+  background: rgba(36, 41, 47, 0.08);
+  border-color: rgba(36, 41, 47, 0.16);
+}
+
+.brand-linkedin {
+  color: #0a66c2;
+  background: rgba(10, 102, 194, 0.1);
+  border-color: rgba(10, 102, 194, 0.2);
+}
+
+.brand-scholar {
+  color: #4285f4;
+  background: rgba(66, 133, 244, 0.1);
+  border-color: rgba(66, 133, 244, 0.2);
+}
+
+.brand-orcid {
+  color: #84b71a;
+  background: rgba(166, 206, 57, 0.14);
+  border-color: rgba(166, 206, 57, 0.26);
+}
+
+.brand-pypi {
+  color: #3775a9;
+  background: linear-gradient(135deg, rgba(55, 117, 169, 0.12), rgba(255, 211, 67, 0.16));
+  border-color: rgba(55, 117, 169, 0.22);
+}
+
 .icon-link,
 .top-link,
 .search-action,
@@ -225,6 +261,42 @@ body[data-theme="dark"] .pill-grid a:hover,
 body[data-theme="dark"] .icon-pill:hover {
   box-shadow: 0 0 0 1px rgba(242, 238, 232, 0.08), 0 8px 20px rgba(242, 238, 232, 0.06);
   border-color: rgba(242, 238, 232, 0.18);
+}
+
+body[data-theme="dark"] .brand-email {
+  color: #fdba74;
+  background: rgba(251, 146, 60, 0.16);
+  border-color: rgba(251, 146, 60, 0.28);
+}
+
+body[data-theme="dark"] .brand-github {
+  color: #f3f4f6;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+body[data-theme="dark"] .brand-linkedin {
+  color: #60a5fa;
+  background: rgba(10, 102, 194, 0.18);
+  border-color: rgba(96, 165, 250, 0.28);
+}
+
+body[data-theme="dark"] .brand-scholar {
+  color: #93c5fd;
+  background: rgba(66, 133, 244, 0.18);
+  border-color: rgba(147, 197, 253, 0.28);
+}
+
+body[data-theme="dark"] .brand-orcid {
+  color: #b8dd67;
+  background: rgba(166, 206, 57, 0.18);
+  border-color: rgba(184, 221, 103, 0.28);
+}
+
+body[data-theme="dark"] .brand-pypi {
+  color: #8ec5ff;
+  background: linear-gradient(135deg, rgba(55, 117, 169, 0.22), rgba(255, 211, 67, 0.14));
+  border-color: rgba(142, 197, 255, 0.26);
 }
 
 .icon-link svg,
