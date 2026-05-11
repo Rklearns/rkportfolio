@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Chest X-ray thumbnail</title>
+  <desc id="desc">Stylized chest X-ray illustration for the pneumonia diagnosis project.</desc>
+  <rect width="512" height="512" rx="48" fill="#d8deea"/>
+  <rect x="38" y="38" width="436" height="436" rx="24" fill="#6e7184" stroke="#111" stroke-width="10"/>
+  <path d="M256 74c-28 0-50 20-50 45 0 14 7 26 19 35h62c12-9 19-21 19-35 0-25-22-45-50-45Z" fill="#8f93a7" stroke="#111" stroke-width="8"/>
+  <rect x="226" y="128" width="60" height="84" rx="24" fill="#a0a5b7" stroke="#111" stroke-width="8"/>
+  <rect x="238" y="198" width="36" height="196" rx="16" fill="#c2c8d8" stroke="#111" stroke-width="8"/>
+  <g fill="none" stroke="#111" stroke-linecap="round" stroke-width="8">
+    <path d="M256 210v180"/>
+    <path d="M225 227h62"/>
+    <path d="M225 255h62"/>
+    <path d="M225 283h62"/>
+    <path d="M225 311h62"/>
+    <path d="M225 339h62"/>
+    <path d="M225 367h62"/>
+  </g>
+  <path d="M161 158c-44 6-84 44-92 98-10 67 32 141 101 152 32 5 55-2 72-18V189c-13-23-44-37-81-31Z" fill="#8d92a6" stroke="#111" stroke-width="8"/>
+  <path d="M351 158c44 6 84 44 92 98 10 67-32 141-101 152-32 5-55-2-72-18V189c13-23 44-37 81-31Z" fill="#8d92a6" stroke="#111" stroke-width="8"/>
+  <g fill="none" stroke="#111" stroke-linecap="round" stroke-width="7">
+    <path d="M114 205c42-20 75-27 104-22"/>
+    <path d="M108 246c39-20 70-25 104-19"/>
+    <path d="M107 288c38-18 66-24 97-19"/>
+    <path d="M116 329c34-18 58-21 83-15"/>
+    <path d="M135 365c23-12 42-17 59-13"/>
+    <path d="M398 205c-42-20-75-27-104-22"/>
+    <path d="M404 246c-39-20-70-25-104-19"/>
+    <path d="M405 288c-38-18-66-24-97-19"/>
+    <path d="M396 329c-34-18-58-21-83-15"/>
+    <path d="M377 365c-23-12-42-17-59-13"/>
+  </g>
+</svg>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">Network flow thumbnail</title>
+  <desc id="desc">System diagram style thumbnail for the OmniGate project.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1">
+      <stop offset="0" stop-color="#dff4ef"/>
+      <stop offset="0.22" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" rx="28" fill="url(#bg)"/>
+  <text x="48" y="68" fill="#143c58" font-family="Quicksand, Arial, sans-serif" font-size="38" font-weight="700">UDP</text>
+  <g opacity="0.08" fill="none" stroke="#7ab7ba" stroke-width="34">
+    <path d="M249 118c-58 31-97 92-97 162s39 131 97 162"/>
+    <path d="M549 118c58 31 97 92 97 162s-39 131-97 162"/>
+  </g>
+  <g transform="translate(66 160)">
+    <rect x="0" y="0" width="120" height="72" rx="8" fill="#7c9ae7" stroke="#3a4e7b" stroke-width="6"/>
+    <rect x="12" y="10" width="96" height="44" rx="4" fill="#9cb3f4"/>
+    <rect x="28" y="49" width="12" height="12" fill="#ffe066"/>
+    <rect x="46" y="49" width="12" height="12" fill="#ffda55"/>
+    <rect x="64" y="49" width="12" height="12" fill="#ff8b5e"/>
+    <rect x="82" y="49" width="12" height="12" fill="#7367f0"/>
+    <path d="M30 72h60l-8 20H38Z" fill="#d8d8d8"/>
+  </g>
+  <g transform="translate(628 154)">
+    <g>
+      <rect x="0" y="0" width="118" height="40" rx="6" fill="#4d96a8"/>
+      <circle cx="18" cy="20" r="8" fill="#ffd166"/>
+      <circle cx="38" cy="20" r="6" fill="#6ad59c"/>
+      <g stroke="#dfeef2" stroke-width="4" stroke-linecap="round">
+        <path d="M84 12v16"/>
+        <path d="M94 8v24"/>
+        <path d="M104 14v12"/>
+      </g>
+    </g>
+    <g transform="translate(0 48)">
+      <rect x="0" y="0" width="118" height="40" rx="6" fill="#4d96a8"/>
+      <circle cx="18" cy="20" r="8" fill="#ffd166"/>
+      <circle cx="38" cy="20" r="6" fill="#6ad59c"/>
+      <g stroke="#dfeef2" stroke-width="4" stroke-linecap="round">
+        <path d="M84 12v16"/>
+        <path d="M94 8v24"/>
+        <path d="M104 14v12"/>
+      </g>
+    </g>
+    <g transform="translate(0 96)">
+      <rect x="0" y="0" width="118" height="40" rx="6" fill="#4d96a8"/>
+      <circle cx="18" cy="20" r="8" fill="#ffd166"/>
+      <circle cx="38" cy="20" r="6" fill="#6ad59c"/>
+      <g stroke="#dfeef2" stroke-width="4" stroke-linecap="round">
+        <path d="M84 12v16"/>
+        <path d="M94 8v24"/>
+        <path d="M104 14v12"/>
+      </g>
+    </g>
+  </g>
+  <g stroke="#19384d" stroke-width="4" stroke-dasharray="14 8" fill="none">
+    <path d="M198 188H620"/>
+    <path d="M198 270H620"/>
+  </g>
+  <path d="M198 188l12-9v18Z" fill="#19384d"/>
+  <path d="M620 270l-12-9v18Z" fill="#19384d"/>
+  <text x="360" y="180" fill="#17374d" font-family="Quicksand, Arial, sans-serif" font-size="20">REQUEST</text>
+  <text x="357" y="262" fill="#17374d" font-family="Quicksand, Arial, sans-serif" font-size="20">RESPONSE</text>
+  <g transform="translate(228 348)">
+    <rect x="0" y="0" width="348" height="40" rx="9" fill="#e8f6ef" stroke="#19384d" stroke-width="2"/>
+    <text x="16" y="26" fill="#1a3a4f" font-family="Quicksand, Arial, sans-serif" font-size="18">Use Case :-</text>
+    <text x="115" y="26" fill="#1a3a4f" font-family="Quicksand, Arial, sans-serif" font-size="18" font-style="italic">Video Conferencing</text>
+  </g>
+</svg>

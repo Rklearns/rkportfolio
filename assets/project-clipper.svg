@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">PyPI style thumbnail</title>
+  <desc id="desc">Python and PyPI inspired thumbnail for the clipper-dev project.</desc>
+  <rect width="800" height="450" rx="28" fill="#ffffff"/>
+  <g transform="translate(78 52)">
+    <path d="M144 0h112c56 0 92 36 92 91v58c0 49-37 86-86 86H128c-40 0-72 33-72 73v17H0v-28c0-48 39-87 88-87h140c33 0 60-27 60-60V96c0-22-18-40-40-40H144Z" fill="#3673a5"/>
+    <circle cx="116" cy="58" r="18" fill="#111"/>
+    <path d="M203 141h-147v18h147Z" fill="#fff"/>
+    <path d="M120 347H8c-56 0-92-36-92-91v-58c0-49 37-86 86-86h134c40 0 72-33 72-73V22h56v28c0 48-39 87-88 87H36c-33 0-60 27-60 60v54c0 22 18 40 40 40h104Z" transform="translate(180 8)" fill="#ffd343"/>
+    <circle cx="292" cy="297" r="18" fill="#111"/>
+    <path d="M274 218h-147v18h147Z" fill="#fff"/>
+  </g>
+  <text x="420" y="260" fill="#5a5a5a" font-family="Quicksand, Arial, sans-serif" font-size="148" font-weight="400">pypi</text>
+</svg>

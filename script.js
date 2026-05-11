@@ -19,3 +19,26 @@ toggle?.addEventListener("click", () => {
   applyTheme(nextTheme);
   localStorage.setItem(storageKey, nextTheme);
 });
+
+const openCardLink = (card) => {
+  const href = card?.dataset.href;
+  if (!href) return;
+
+  const external = card.dataset.external === "true";
+  if (external) {
+    window.open(href, "_blank", "noopener,noreferrer");
+    return;
+  }
+
+  window.location.href = href;
+};
+
+document.querySelectorAll("[data-href]").forEach((card) => {
+  card.addEventListener("click", () => openCardLink(card));
+  card.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openCardLink(card);
+    }
+  });
+});
