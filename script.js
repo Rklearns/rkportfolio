@@ -425,22 +425,6 @@ if (!prefersReducedMotion()) {
   observer.observe(introStage);
 })();
 
-// ── Rotating tagline ──
-(() => {
-  const el = document.getElementById("introRole");
-  if (!el) return;
-  const roles = ["AI Researcher", "Backend Engineer", "ML Enthusiast", "CS Undergraduate"];
-  let idx = 0;
-  setInterval(() => {
-    el.classList.add("fade");
-    setTimeout(() => {
-      idx = (idx + 1) % roles.length;
-      el.textContent = roles[idx];
-      el.classList.remove("fade");
-    }, 350);
-  }, 3200);
-})();
-
 // ── Arrow key navigation ──
 (() => {
   const sectionIds = ["home", "about", "projects", "publications", "talks", "experience", "education", "contact"];
