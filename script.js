@@ -57,16 +57,20 @@ const SECTION_IDS = new Set([
 const prefersReducedMotion = () =>
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+const spotPointerOk = () =>
+  !prefersReducedMotion() && window.matchMedia("(hover: hover)").matches;
+
 let pageTurnBusy = false;
 
 const resolveSectionElement = (id) =>
   id === "home" ? document.getElementById("home") : document.getElementById(id);
 
-const runPageTurn = async (mid) => {
-  const root = document.getElementById("pageTurn");
-  const sheet = root?.querySelector(".page-turn__sheet");
+const runSceneTransition = async (mid) => {
+  const root = document.getElementById("sceneTransition");
+  const paper = root?.querySelector(".scene-transition__paper");
+  const shade = root?.querySelector(".scene-transition__shade");
 
-  if (!root || !sheet || prefersReducedMotion() || typeof sheet.animate !== "function") {
+  if (!root || !paper || !shade || prefersReducedMotion() || typeof paper.animate !== "function") {
     mid();
     return;
   }
@@ -78,26 +82,37 @@ const runPageTurn = async (mid) => {
   root.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
 
+  const ease = "cubic-bezier(0.45, 0, 0.18, 1)";
+  const slideIn = { duration: 440, easing: ease, fill: "both" };
+  const slideOut = { duration: 460, easing: "cubic-bezier(0.32, 0.08, 0.2, 1)", fill: "both" };
+
   try {
-    const close = sheet.animate(
-      [{ transform: "rotateY(0deg)" }, { transform: "rotateY(-102deg)" }],
-      { duration: 400, easing: "cubic-bezier(0.52, 0.02, 0.62, 1)", fill: "forwards" }
+    const paperIn = paper.animate(
+      [{ transform: "translateX(105%)" }, { transform: "translateX(0%)" }],
+      slideIn
     );
-    await close.finished;
-    close.cancel();
-    sheet.style.transform = "rotateY(-102deg)";
+    const shadeIn = shade.animate([{ opacity: 0 }, { opacity: 0.22 }], slideIn);
+    await Promise.all([paperIn.finished, shadeIn.finished]);
+    paperIn.cancel();
+    shadeIn.cancel();
+    paper.style.transform = "translateX(0%)";
+    shade.style.opacity = "0.22";
+
     mid();
 
-    const open = sheet.animate(
-      [{ transform: "rotateY(-102deg)" }, { transform: "rotateY(0deg)" }],
-      { duration: 420, easing: "cubic-bezier(0.38, 0, 0.48, 1)", fill: "forwards" }
+    const paperOut = paper.animate(
+      [{ transform: "translateX(0%)" }, { transform: "translateX(-105%)" }],
+      slideOut
     );
-    await open.finished;
-    open.cancel();
+    const shadeOut = shade.animate([{ opacity: 0.22 }, { opacity: 0 }], slideOut);
+    await Promise.all([paperOut.finished, shadeOut.finished]);
+    paperOut.cancel();
+    shadeOut.cancel();
   } catch {
     mid();
   } finally {
-    sheet.style.removeProperty("transform");
+    paper.style.removeProperty("transform");
+    shade.style.removeProperty("opacity");
     root.classList.remove("is-active");
     root.setAttribute("hidden", "");
     root.setAttribute("aria-hidden", "true");
@@ -143,5 +158,199 @@ document.addEventListener("click", async (e) => {
     }
   };
 
-  await runPageTurn(go);
+  await runSceneTransition(go);
 });
+
+const introStage = document.querySelector(".intro-stage");
+if (introStage && spotPointerOk()) {
+  introStage.addEventListener(
+    "pointermove",
+    (e) => {
+      const r = introStage.getBoundingClientRect();
+      const x = ((e.clientX - r.left) / Math.max(r.width, 1)) * 100;
+      const y = ((e.clientY - r.top) / Math.max(r.height, 1)) * 100;
+      introStage.style.setProperty("--spot-x", `${Math.max(0, Math.min(100, x))}%`);
+      introStage.style.setProperty("--spot-y", `${Math.max(0, Math.min(100, y))}%`);
+    },
+    { passive: true }
+  );
+}
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const buildNameReelSteps = () => {
+  const texts = [
+    "RishitKar",
+    "RISHITKAR",
+    "rishitkar",
+    "Rishit Kar",
+    "RISHIT KAR",
+    "rishit kar",
+    "RishitKar.",
+    "riShItKaR",
+    "Rishit_Kar",
+    "rishit.kar",
+  ];
+  const fonts = [
+    `'Bebas Neue', sans-serif`,
+    `'Oswald', sans-serif`,
+    `'Playfair Display', Georgia, serif`,
+    `'JetBrains Mono', ui-monospace, monospace`,
+    `'Syne', sans-serif`,
+    `'Instrument Serif', Georgia, serif`,
+    `'Archivo Black', sans-serif`,
+    `'Shadows Into Light', cursive`,
+    `'Quicksand', sans-serif`,
+    "Georgia, ui-serif, serif",
+    "ui-monospace, Menlo, Monaco, monospace",
+    "system-ui, sans-serif",
+    "Palatino, 'Palatino Linotype', serif",
+  ];
+  const mods = ["", "name-reel__label--chrome", "name-reel__label--outline", "name-reel__label--frost", "name-reel__label--glow", "name-reel__label--mono-cut"];
+  const transforms = [
+    "none",
+    "scale(1.1) rotate(-2.5deg)",
+    "scale(0.9) rotate(2deg)",
+    "scale(1.06) skewX(-5deg)",
+    "skewX(5deg) scale(0.94)",
+    "rotate(-7deg) scale(1.04)",
+    "scaleY(1.18) scaleX(0.88)",
+    "translateX(-1.5%) scale(1.08)",
+    "scale(1.15) rotate(1.2deg)",
+  ];
+  const weights = ["200", "300", "400", "500", "600", "700", "800", "900"];
+  const steps = [];
+
+  for (let i = 0; i < 46; i++) {
+    steps.push({
+      text: texts[i % texts.length],
+      className: mods[i % mods.length],
+      style: {
+        fontFamily: fonts[i % fonts.length],
+        fontWeight: weights[i % weights.length],
+        fontStyle: i % 5 === 1 ? "italic" : "normal",
+        letterSpacing: `${(-0.055 + (i % 14) * 0.0075).toFixed(4)}em`,
+        textTransform: ["uppercase", "lowercase", "none", "capitalize"][(i + 1) % 4],
+        transform: transforms[i % transforms.length],
+        filter: i % 9 === 2 ? "blur(0.35px)" : i % 9 === 6 ? "contrast(1.12)" : "none",
+        opacity: String(0.78 + (i % 4) * 0.06),
+        fontSize: `clamp(${2.25 + (i % 8) * 0.2}rem, ${6.2 + (i % 6) * 0.9}vw, ${4.6 + (i % 5) * 0.35}rem)`,
+      },
+    });
+  }
+
+  steps.push({
+    text: "Rishit Kar",
+    className: "name-reel__label--shine",
+    style: {
+      fontFamily: `'Quicksand', sans-serif`,
+      fontWeight: "600",
+      fontStyle: "normal",
+      letterSpacing: "-0.03em",
+      textTransform: "none",
+      transform: "scale(1)",
+      filter: "none",
+      opacity: "1",
+      fontSize: "clamp(2.6rem, 10vw, 5rem)",
+    },
+  });
+
+  steps.push({
+    text: "Rishit Kar",
+    className: "",
+    style: {
+      fontFamily: `'Shadows Into Light', cursive`,
+      fontWeight: "400",
+      fontStyle: "normal",
+      letterSpacing: "0.02em",
+      textTransform: "none",
+      transform: "scale(1.02)",
+      filter: "none",
+      opacity: "1",
+      fontSize: "clamp(3rem, 12vw, 6rem)",
+    },
+  });
+
+  return steps;
+};
+
+const applyReelStep = (el, step) => {
+  el.textContent = step.text;
+  el.className = "name-reel__label" + (step.className ? ` ${step.className}` : "");
+  el.style.cssText = "";
+  Object.assign(el.style, step.style);
+};
+
+(() => {
+  const reel = document.getElementById("nameReel");
+  const label = document.getElementById("reelText");
+  const skipBtn = reel?.querySelector("[data-reel-skip]");
+  if (!reel || !label) return;
+
+  if (prefersReducedMotion()) {
+    reel.classList.add("name-reel--gone");
+    reel.setAttribute("aria-hidden", "true");
+    reel.setAttribute("inert", "");
+    return;
+  }
+
+  const steps = buildNameReelSteps();
+  let done = false;
+  let escHandler = null;
+
+  const cleanup = () => {
+    if (escHandler) {
+      document.removeEventListener("keydown", escHandler);
+      escHandler = null;
+    }
+    document.documentElement.classList.remove("reel-active");
+    document.body.style.overflow = "";
+    reel.setAttribute("aria-hidden", "true");
+    reel.classList.add("name-reel--out");
+
+    let finalized = false;
+    const finalize = () => {
+      if (finalized) return;
+      finalized = true;
+      reel.removeEventListener("transitionend", onEnd);
+      clearTimeout(fallback);
+      reel.setAttribute("inert", "");
+      reel.setAttribute("hidden", "");
+      reel.classList.add("name-reel--gone");
+    };
+    const onEnd = (e) => {
+      if (e.target !== reel || e.propertyName !== "opacity") return;
+      finalize();
+    };
+    const fallback = setTimeout(finalize, 900);
+    reel.addEventListener("transitionend", onEnd);
+  };
+
+  const finish = () => {
+    if (done) return;
+    done = true;
+    cleanup();
+  };
+
+  skipBtn?.addEventListener("click", finish);
+  escHandler = (e) => {
+    if (e.key === "Escape") finish();
+  };
+  document.addEventListener("keydown", escHandler);
+
+  document.documentElement.classList.add("reel-active");
+  document.body.style.overflow = "hidden";
+  skipBtn?.focus({ preventScroll: true });
+
+  (async () => {
+    for (let i = 0; i < steps.length; i++) {
+      if (done) return;
+      applyReelStep(label, steps[i]);
+      const ms = i >= steps.length - 2 ? 160 : 68 + (i % 5) * 6;
+      await sleep(ms);
+    }
+    if (done) return;
+    await sleep(520);
+    finish();
+  })();
+})();
