@@ -385,25 +385,44 @@ if (!prefersReducedMotion()) {
 
 // ── Nav scroll spy ──
 (() => {
-  const navLinks = document.querySelectorAll(".center-nav a");
-  if (!navLinks.length) return;
-  const sections = Array.from(navLinks)
-    .map((a) => document.getElementById(a.getAttribute("href").slice(1)))
-    .filter(Boolean);
+  const allNavLinks = [...document.querySelectorAll(".center-nav a, .sticky-nav a")];
+  if (!allNavLinks.length) return;
 
-  const spyObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navLinks.forEach((link) => {
-            link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`);
-          });
-        }
-      });
+  const getNavPairs = () =>
+    allNavLinks.map((link) => ({
+      link,
+      section: document.getElementById(link.getAttribute("href").slice(1)),
+    }));
+
+  const updateActive = () => {
+    const scrollY = window.scrollY + 160;
+    let activeId = null;
+    const pairs = getNavPairs();
+    for (const { link, section } of pairs) {
+      if (section && section.offsetTop <= scrollY) {
+        activeId = link.getAttribute("href");
+      }
+    }
+    pairs.forEach(({ link }) => link.classList.toggle("active", link.getAttribute("href") === activeId));
+  };
+
+  window.addEventListener("scroll", updateActive, { passive: true });
+  updateActive();
+})();
+
+// ── Sticky nav toggle ──
+(() => {
+  const stickyNav = document.getElementById("stickyNav");
+  const introStage = document.querySelector(".intro-stage");
+  if (!stickyNav || !introStage) return;
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      stickyNav.classList.toggle("visible", !entry.isIntersecting);
     },
-    { threshold: 0.3, rootMargin: "-10% 0px -10% 0px" }
+    { threshold: 0 }
   );
-  sections.forEach((s) => spyObserver.observe(s));
+  observer.observe(introStage);
 })();
 
 // ── Arrow key navigation ──
