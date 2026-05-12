@@ -43,6 +43,26 @@ body {
   color: var(--text);
   font-family: "Quicksand", sans-serif;
   font-weight: 400;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 85% 55% at 12% -8%, rgba(190, 168, 230, 0.11), transparent 52%),
+    radial-gradient(ellipse 70% 45% at 92% 8%, rgba(130, 200, 186, 0.09), transparent 48%),
+    radial-gradient(ellipse 50% 35% at 50% 100%, rgba(240, 210, 170, 0.06), transparent 55%);
+}
+
+body[data-theme="dark"]::before {
+  background:
+    radial-gradient(ellipse 85% 55% at 12% -8%, rgba(120, 90, 180, 0.14), transparent 52%),
+    radial-gradient(ellipse 70% 45% at 92% 8%, rgba(60, 140, 130, 0.1), transparent 48%),
+    radial-gradient(ellipse 50% 35% at 50% 100%, rgba(180, 140, 90, 0.06), transparent 55%);
 }
 
 a {
@@ -55,17 +75,28 @@ img {
   max-width: 100%;
 }
 
+::selection {
+  background: rgba(43, 40, 37, 0.14);
+}
+
+body[data-theme="dark"]::selection {
+  background: rgba(243, 240, 235, 0.16);
+}
+
 .page {
   width: min(1280px, 100%);
   margin: 0 auto;
   padding: 36px 24px 96px;
+  position: relative;
+  z-index: 1;
+  scroll-margin-top: 20px;
 }
 
 .theme-toggle {
   position: fixed;
   top: 18px;
   right: 18px;
-  z-index: 20;
+  z-index: 30;
   width: 56px;
   min-height: 34px;
   padding: 0;
@@ -219,6 +250,15 @@ body[data-theme="dark"] .theme-moon {
 .back-home {
   color: var(--muted);
   font-size: 0.98rem;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.center-nav a:hover,
+.center-nav a:focus-visible,
+.back-home:hover,
+.back-home:focus-visible {
+  color: var(--text);
+  outline: none;
 }
 
 .floating-photo {
@@ -276,6 +316,52 @@ body[data-theme="dark"] .photo-place {
   transform: translateY(0);
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .intro-stage .floating-photo {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: introPhotoIn 0.72s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .photo-top-left {
+    animation-delay: 0.04s;
+  }
+
+  .photo-top-middle {
+    animation-delay: 0.1s;
+  }
+
+  .photo-top-right {
+    animation-delay: 0.16s;
+  }
+
+  .photo-bottom-left {
+    animation-delay: 0.22s;
+  }
+
+  .photo-bottom-middle {
+    animation-delay: 0.28s;
+  }
+
+  .intro-center {
+    opacity: 0;
+    animation: introCenterIn 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.12s forwards;
+  }
+}
+
+@keyframes introPhotoIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes introCenterIn {
+  to {
+    opacity: 1;
+  }
+}
+
 .photo-top-left {
   grid-area: top-left;
   max-width: 188px;
@@ -309,6 +395,7 @@ body[data-theme="dark"] .photo-place {
   width: min(760px, 100%);
   margin: 0 auto;
   padding-top: 64px;
+  scroll-margin-top: 28px;
 }
 
 .back-home {
@@ -490,6 +577,10 @@ body[data-theme="dark"] .clickable-card:focus-visible {
   line-height: 1.28;
 }
 
+#experience .research-entry > p.entry-meta + p {
+  margin-top: 2px;
+}
+
 .research-entry p.entry-meta {
   margin: 0 0 8px;
   font-size: 0.94rem;
@@ -497,7 +588,21 @@ body[data-theme="dark"] .clickable-card:focus-visible {
   line-height: 1.5;
 }
 
-.research-list--tight .research-entry > p.entry-meta + p {
+.research-entry p.por-heading {
+  margin: 14px 0 5px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.research-entry p.entry-meta.por-role {
+  margin: 0 0 8px;
+}
+
+#education .research-entry > p.por-role + p {
   margin-top: 2px;
 }
 
@@ -512,6 +617,40 @@ body[data-theme="dark"] .clickable-card:focus-visible {
 .title-link:focus-visible {
   border-bottom-color: var(--muted-strong);
   outline: none;
+}
+
+.page-turn {
+  position: fixed;
+  inset: 0;
+  z-index: 25;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.page-turn.is-active {
+  visibility: visible;
+  pointer-events: all;
+}
+
+.page-turn__inner {
+  position: absolute;
+  inset: 0;
+  perspective: 2200px;
+  perspective-origin: 0% 50%;
+}
+
+.page-turn__sheet {
+  position: absolute;
+  inset: 0;
+  background: var(--surface);
+  transform-origin: left center;
+  box-shadow: 16px 0 60px rgba(0, 0, 0, 0.12);
+  border-right: 1px solid var(--border);
+  will-change: transform;
+}
+
+body[data-theme="dark"] .page-turn__sheet {
+  box-shadow: 16px 0 60px rgba(0, 0, 0, 0.45);
 }
 
 .soft-pill {
