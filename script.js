@@ -221,7 +221,7 @@ const buildNameReelSteps = () => {
   const weights = ["200", "300", "400", "500", "600", "700", "800", "900"];
   const steps = [];
 
-  for (let i = 0; i < 28; i++) {
+  for (let i = 0; i < 36; i++) {
     steps.push({
       text: texts[i % texts.length],
       className: mods[i % mods.length],
@@ -346,11 +346,11 @@ const applyReelStep = (el, step) => {
     for (let i = 0; i < steps.length; i++) {
       if (done) return;
       applyReelStep(label, steps[i]);
-      const ms = i >= steps.length - 2 ? 110 : 45 + (i % 3) * 12;
+      const ms = i >= steps.length - 2 ? 160 : 70 + (i % 3) * 15;
       await sleep(ms);
     }
     if (done) return;
-    await sleep(360);
+    await sleep(600);
     finish();
   })();
 })();
