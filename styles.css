@@ -404,6 +404,26 @@ body[data-theme="dark"] .clickable-card:focus-visible {
   margin: 8px 0 0;
 }
 
+.title-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.18s ease, color 0.18s ease;
+}
+
+.title-link:hover,
+.title-link:focus-visible {
+  border-bottom-color: var(--muted-strong);
+  outline: none;
+}
+
+.experience-line {
+  margin: 2px 0 10px;
+  font-size: 0.94rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
 .soft-pill {
   min-height: 42px;
   padding: 0 24px;
