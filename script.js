@@ -424,14 +424,15 @@ if (!prefersReducedMotion()) {
     toggle.setAttribute("aria-expanded", "false");
   };
 
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      stickyNav.classList.toggle("visible", !entry.isIntersecting);
-      if (entry.isIntersecting) closeMenu();
-    },
-    { threshold: 0 }
-  );
-  observer.observe(introStage);
+  const onScroll = () => {
+    const rect = introStage.getBoundingClientRect();
+    const past = rect.bottom <= 0;
+    stickyNav.classList.toggle("visible", past);
+    if (!past) closeMenu();
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 
   toggle.addEventListener("click", (e) => {
     e.stopPropagation();

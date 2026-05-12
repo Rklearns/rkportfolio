@@ -1111,7 +1111,7 @@ body[data-theme="dark"] .soft-pill:hover {
   }
 
   .center-nav {
-    gap: 16px;
+    gap: 22px;
   }
 
   .sticky-nav {
@@ -1138,11 +1138,11 @@ body[data-theme="dark"] .soft-pill:hover {
   }
 
   .center-nav {
-    gap: 8px;
+    gap: 12px;
   }
 
   .center-nav a {
-    font-size: 0.78rem;
+    font-size: 0.82rem;
   }
 
   .sticky-nav {
@@ -1211,11 +1211,11 @@ body[data-theme="dark"] .soft-pill:hover {
   }
 
   .center-nav {
-    gap: 6px;
+    gap: 8px;
   }
 
   .center-nav a {
-    font-size: 0.72rem;
+    font-size: 0.76rem;
   }
 
   .intro-center h1 {
