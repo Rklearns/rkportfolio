@@ -414,15 +414,39 @@ if (!prefersReducedMotion()) {
 (() => {
   const stickyNav = document.getElementById("stickyNav");
   const introStage = document.querySelector(".intro-stage");
-  if (!stickyNav || !introStage) return;
+  const toggle = document.getElementById("stickyNavToggle");
+  const menu = document.getElementById("stickyNavMenu");
+  if (!stickyNav || !introStage || !toggle || !menu) return;
+
+  const closeMenu = () => {
+    menu.classList.remove("open");
+    toggle.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+  };
 
   const observer = new IntersectionObserver(
     ([entry]) => {
       stickyNav.classList.toggle("visible", !entry.isIntersecting);
+      if (entry.isIntersecting) closeMenu();
     },
     { threshold: 0 }
   );
   observer.observe(introStage);
+
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = menu.classList.toggle("open");
+    toggle.classList.toggle("open", isOpen);
+    toggle.setAttribute("aria-expanded", isOpen);
+  });
+
+  menu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!stickyNav.contains(e.target)) closeMenu();
+  });
 })();
 
 // ── Arrow key navigation ──
