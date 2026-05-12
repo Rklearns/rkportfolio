@@ -354,3 +354,116 @@ const applyReelStep = (el, step) => {
     finish();
   })();
 })();
+
+// ── Scroll progress bar ──
+const scrollProgress = document.getElementById("scrollProgress");
+if (scrollProgress) {
+  const updateProgress = () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    scrollProgress.style.setProperty("--scroll-pct", `${scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0}%`);
+  };
+  window.addEventListener("scroll", updateProgress, { passive: true });
+  updateProgress();
+}
+
+// ── Section reveal on scroll ──
+if (!prefersReducedMotion()) {
+  const revObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          revObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
+  );
+  document.querySelectorAll(".simple-section").forEach((s) => revObserver.observe(s));
+}
+
+// ── Nav scroll spy ──
+(() => {
+  const navLinks = document.querySelectorAll(".center-nav a");
+  if (!navLinks.length) return;
+  const sections = Array.from(navLinks)
+    .map((a) => document.getElementById(a.getAttribute("href").slice(1)))
+    .filter(Boolean);
+
+  const spyObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navLinks.forEach((link) => {
+            link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`);
+          });
+        }
+      });
+    },
+    { threshold: 0.3, rootMargin: "-10% 0px -10% 0px" }
+  );
+  sections.forEach((s) => spyObserver.observe(s));
+})();
+
+// ── Arrow key navigation ──
+(() => {
+  const sectionIds = ["home", "about", "projects", "publications", "talks", "experience", "education", "contact"];
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+    if (e.target.closest("input, textarea, [contenteditable]")) return;
+    e.preventDefault();
+
+    const scrollCenter = window.scrollY + window.innerHeight / 2;
+    let currentIdx = -1;
+    for (let i = 0; i < sectionIds.length; i++) {
+      const el = document.getElementById(sectionIds[i]);
+      if (!el) continue;
+      const top = el.offsetTop;
+      const bottom = top + el.offsetHeight;
+      if (scrollCenter >= top && scrollCenter < bottom) {
+        currentIdx = i;
+        break;
+      }
+    }
+
+    if (currentIdx < 0) {
+      const scrollTop = window.scrollY;
+      for (let i = 0; i < sectionIds.length; i++) {
+        const el = document.getElementById(sectionIds[i]);
+        if (el && el.offsetTop + el.offsetHeight / 2 >= scrollTop) {
+          currentIdx = i;
+          break;
+        }
+      }
+      if (currentIdx < 0) currentIdx = 0;
+    }
+
+    const targetIdx = e.key === "ArrowDown"
+      ? Math.min(currentIdx + 1, sectionIds.length - 1)
+      : Math.max(currentIdx - 1, 0);
+
+    if (targetIdx === currentIdx) return;
+    const target = document.getElementById(sectionIds[targetIdx]);
+    if (target) target.scrollIntoView({ block: "start", behavior: "smooth" });
+  });
+})();
+
+// ── Photo 3D tilt on hover ──
+if (!prefersReducedMotion() && window.matchMedia("(hover: hover)").matches) {
+  document.querySelectorAll(".floating-photo").forEach((photo) => {
+    photo.addEventListener("mousemove", (e) => {
+      const rect = photo.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      photo.style.setProperty("--tilt-x", `${(y - 0.5) * -10}deg`);
+      photo.style.setProperty("--tilt-y", `${(x - 0.5) * 10}deg`);
+    });
+
+    photo.addEventListener("mouseleave", () => {
+      photo.style.removeProperty("--tilt-x");
+      photo.style.removeProperty("--tilt-y");
+    });
+  });
+}
