@@ -454,4 +454,25 @@ if (!prefersReducedMotion()) {
   });
 })();
 
+// ── Gallery arrow scroll ──
+(() => {
+  const scrollGallery = (trackId, leftBtnId, rightBtnId) => {
+    const track = document.getElementById(trackId);
+    const left = document.getElementById(leftBtnId);
+    const right = document.getElementById(rightBtnId);
+    if (!track || !left || !right) return;
+
+    const scroll = (dir) => {
+      const img = track.querySelector("img");
+      if (!img) return;
+      const step = img.offsetWidth + 12;
+      track.scrollBy({ left: dir * step, behavior: "smooth" });
+    };
+
+    left.addEventListener("click", () => scroll(-1));
+    right.addEventListener("click", () => scroll(1));
+  };
+
+  scrollGallery("mandiGalleryTrack", "mandiGalleryLeft", "mandiGalleryRight");
+})();
 

@@ -967,7 +967,7 @@ body[data-theme="dark"] .talk-card:focus-visible {
 .talk-body h3 {
   margin: 0;
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.35;
   letter-spacing: -0.01em;
 }
@@ -982,6 +982,107 @@ body[data-theme="dark"] .talk-card:focus-visible {
 @media (max-width: 640px) {
   .talk-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+.media-scroll {
+  margin: 16px 0 4px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.media-track {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 4px 44px 4px 4px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.media-track::-webkit-scrollbar {
+  display: none;
+}
+
+.media-track img {
+  height: 220px;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(35, 29, 22, 0.1);
+  scroll-snap-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+}
+
+.media-track img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(35, 29, 22, 0.15);
+}
+
+.media-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.92);
+  color: #24201c;
+  font-size: 1.4rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+  user-select: none;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(6px);
+}
+
+body[data-theme="dark"] .media-arrow {
+  background: rgba(30, 30, 33, 0.92);
+  color: #f3f0eb;
+}
+
+.media-arrow:hover {
+  transform: translateY(-50%) scale(1.12);
+  background: rgba(255, 255, 255, 1);
+}
+
+body[data-theme="dark"] .media-arrow:hover {
+  background: rgba(50, 50, 55, 0.95);
+}
+
+.media-arrow--left {
+  left: 6px;
+}
+
+.media-arrow--right {
+  right: 6px;
+}
+
+@media (max-width: 640px) {
+  .media-track {
+    padding: 4px 40px 4px 4px;
+  }
+  .media-track img {
+    height: 160px;
+    width: auto;
+  }
+
+  .media-arrow {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
   }
 }
 
