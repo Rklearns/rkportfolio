@@ -906,6 +906,85 @@ body[data-theme="dark"] .clickable-card:focus-visible {
   margin-top: 2px;
 }
 
+.talk-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.talk-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: 0 8px 24px rgba(35, 29, 22, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  padding: 0;
+  margin: 0;
+}
+
+.talk-card:hover,
+.talk-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(35, 29, 22, 0.1);
+  background: none;
+}
+
+body[data-theme="dark"] .talk-card {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+body[data-theme="dark"] .talk-card:hover,
+body[data-theme="dark"] .talk-card:focus-visible {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.talk-shot {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.talk-shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.talk-card:hover .talk-shot img {
+  transform: scale(1.05);
+}
+
+.talk-body {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.talk-body h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.talk-meta {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 640px) {
+  .talk-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .title-link {
   color: inherit;
   text-decoration: none;
