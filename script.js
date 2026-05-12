@@ -385,7 +385,7 @@ if (!prefersReducedMotion()) {
 
 // ── Nav scroll spy ──
 (() => {
-  const allNavLinks = [...document.querySelectorAll(".center-nav a, .sticky-nav a")];
+  const allNavLinks = [...document.querySelectorAll(".center-nav a")];
   if (!allNavLinks.length) return;
 
   const getNavPairs = () =>
@@ -408,46 +408,6 @@ if (!prefersReducedMotion()) {
 
   window.addEventListener("scroll", updateActive, { passive: true });
   updateActive();
-})();
-
-// ── Sticky nav toggle ──
-(() => {
-  const stickyNav = document.getElementById("stickyNav");
-  const introStage = document.querySelector(".intro-stage");
-  const toggle = document.getElementById("stickyNavToggle");
-  const menu = document.getElementById("stickyNavMenu");
-  if (!stickyNav || !introStage || !toggle || !menu) return;
-
-  const closeMenu = () => {
-    menu.classList.remove("open");
-    toggle.classList.remove("open");
-    toggle.setAttribute("aria-expanded", "false");
-  };
-
-  const onScroll = () => {
-    const rect = introStage.getBoundingClientRect();
-    const past = rect.bottom <= 0;
-    stickyNav.classList.toggle("visible", past);
-    if (!past) closeMenu();
-  };
-
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
-
-  toggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    const isOpen = menu.classList.toggle("open");
-    toggle.classList.toggle("open", isOpen);
-    toggle.setAttribute("aria-expanded", isOpen);
-  });
-
-  menu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!stickyNav.contains(e.target)) closeMenu();
-  });
 })();
 
 // ── Arrow key navigation ──
