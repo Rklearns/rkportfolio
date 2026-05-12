@@ -7,6 +7,10 @@
   --muted-strong: #7d766e;
   --border: rgba(44, 38, 32, 0.09);
   --shadow: 0 18px 38px rgba(40, 34, 28, 0.08);
+  --contact-badge-bg: #141414;
+  --contact-badge-fg: #fafafa;
+  --contact-link: #2563eb;
+  --contact-link-hover: #1d4ed8;
 }
 
 body[data-theme="dark"] {
@@ -18,6 +22,10 @@ body[data-theme="dark"] {
   --muted-strong: #d2cbc4;
   --border: rgba(255, 255, 255, 0.08);
   --shadow: 0 18px 40px rgba(0, 0, 0, 0.26);
+  --contact-badge-bg: #f4f4f5;
+  --contact-badge-fg: #141414;
+  --contact-link: #60a5fa;
+  --contact-link-hover: #93c5fd;
 }
 
 * {
@@ -316,6 +324,75 @@ body[data-theme="dark"] .photo-place {
   font-weight: 300;
 }
 
+.contact-section {
+  padding-top: 72px;
+  padding-bottom: 120px;
+}
+
+.contact-section .back-home {
+  margin-bottom: 36px;
+}
+
+.contact-footer {
+  text-align: center;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.contact-badge {
+  display: inline-block;
+  margin: 0 0 18px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: var(--contact-badge-bg);
+  color: var(--contact-badge-fg);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.contact-section h2.contact-heading {
+  margin: 0 0 14px;
+  font-family: "Quicksand", sans-serif;
+  font-size: clamp(2.1rem, 5vw, 2.85rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  color: var(--text);
+  text-align: center;
+}
+
+.contact-lede {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--muted-strong);
+}
+
+.contact-sub {
+  margin: 14px 0 0;
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.contact-link {
+  color: var(--contact-link);
+  font-weight: 600;
+  text-decoration: none;
+  text-underline-offset: 3px;
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+  color: var(--contact-link-hover);
+  text-decoration: underline;
+  outline: none;
+}
+
 .narrow-copy,
 .research-list {
   color: var(--text);
@@ -400,8 +477,28 @@ body[data-theme="dark"] .clickable-card:focus-visible {
   gap: 34px;
 }
 
+.research-list--tight {
+  gap: 26px;
+}
+
 .research-entry p {
   margin: 8px 0 0;
+}
+
+.research-list--tight .research-entry h3 {
+  margin: 0 0 2px;
+  line-height: 1.28;
+}
+
+.research-entry p.entry-meta {
+  margin: 0 0 8px;
+  font-size: 0.94rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.research-list--tight .research-entry > p.entry-meta + p {
+  margin-top: 2px;
 }
 
 .title-link {
@@ -415,13 +512,6 @@ body[data-theme="dark"] .clickable-card:focus-visible {
 .title-link:focus-visible {
   border-bottom-color: var(--muted-strong);
   outline: none;
-}
-
-.experience-line {
-  margin: 2px 0 10px;
-  font-size: 0.94rem;
-  color: var(--muted);
-  line-height: 1.55;
 }
 
 .soft-pill {
