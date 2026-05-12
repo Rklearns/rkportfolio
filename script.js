@@ -494,20 +494,4 @@ if (!prefersReducedMotion()) {
   });
 })();
 
-// ── Photo 3D tilt on hover ──
-if (!prefersReducedMotion() && window.matchMedia("(hover: hover)").matches) {
-  document.querySelectorAll(".floating-photo").forEach((photo) => {
-    photo.addEventListener("mousemove", (e) => {
-      const rect = photo.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width;
-      const y = (e.clientY - rect.top) / rect.height;
-      photo.style.setProperty("--tilt-x", `${(y - 0.5) * -10}deg`);
-      photo.style.setProperty("--tilt-y", `${(x - 0.5) * 10}deg`);
-    });
 
-    photo.addEventListener("mouseleave", () => {
-      photo.style.removeProperty("--tilt-x");
-      photo.style.removeProperty("--tilt-y");
-    });
-  });
-}
