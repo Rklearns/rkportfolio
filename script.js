@@ -221,7 +221,7 @@ const buildNameReelSteps = () => {
   const weights = ["200", "300", "400", "500", "600", "700", "800", "900"];
   const steps = [];
 
-  for (let i = 0; i < 46; i++) {
+  for (let i = 0; i < 28; i++) {
     steps.push({
       text: texts[i % texts.length],
       className: mods[i % mods.length],
@@ -346,11 +346,11 @@ const applyReelStep = (el, step) => {
     for (let i = 0; i < steps.length; i++) {
       if (done) return;
       applyReelStep(label, steps[i]);
-      const ms = i >= steps.length - 2 ? 160 : 68 + (i % 5) * 6;
+      const ms = i >= steps.length - 2 ? 110 : 45 + (i % 3) * 12;
       await sleep(ms);
     }
     if (done) return;
-    await sleep(520);
+    await sleep(360);
     finish();
   })();
 })();
@@ -423,6 +423,22 @@ if (!prefersReducedMotion()) {
     { threshold: 0 }
   );
   observer.observe(introStage);
+})();
+
+// ── Rotating tagline ──
+(() => {
+  const el = document.getElementById("introRole");
+  if (!el) return;
+  const roles = ["AI Researcher", "Backend Engineer", "ML Enthusiast", "CS Undergraduate"];
+  let idx = 0;
+  setInterval(() => {
+    el.classList.add("fade");
+    setTimeout(() => {
+      idx = (idx + 1) % roles.length;
+      el.textContent = roles[idx];
+      el.classList.remove("fade");
+    }, 350);
+  }, 3200);
 })();
 
 // ── Arrow key navigation ──
