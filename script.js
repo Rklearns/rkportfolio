@@ -476,3 +476,39 @@ if (!prefersReducedMotion()) {
   scrollGallery("mandiGalleryTrack", "mandiGalleryLeft", "mandiGalleryRight");
 })();
 
+// ── Scroll Progress Bar ──
+(() => {
+  const progress = document.createElement("div");
+  progress.className = "scroll-progress";
+  document.body.appendChild(progress);
+
+  const update = () => {
+    const scrolled = window.scrollY;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = max > 0 ? (scrolled / max) * 100 : 0;
+    progress.style.width = `${pct}%`;
+  };
+
+  window.addEventListener("scroll", update, { passive: true });
+  update();
+})();
+
+// ── Section Reveal on Scroll ──
+(() => {
+  const sections = document.querySelectorAll(".simple-section");
+  if (!sections.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+})();
+
