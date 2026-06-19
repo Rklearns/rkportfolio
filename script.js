@@ -403,7 +403,15 @@ if (!prefersReducedMotion()) {
         activeId = link.getAttribute("href");
       }
     }
-    pairs.forEach(({ link }) => link.classList.toggle("active", link.getAttribute("href") === activeId));
+    pairs.forEach(({ link }) => {
+      const isActive = link.getAttribute("href") === activeId;
+      link.classList.toggle("active", isActive);
+      if (isActive) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
   };
 
   window.addEventListener("scroll", updateActive, { passive: true });
@@ -475,4 +483,3 @@ if (!prefersReducedMotion()) {
 
   scrollGallery("mandiGalleryTrack", "mandiGalleryLeft", "mandiGalleryRight");
 })();
-
