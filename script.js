@@ -420,7 +420,7 @@ if (!prefersReducedMotion()) {
 
 // ── Arrow key navigation ──
 (() => {
-  const sectionIds = ["home", "about", "projects", "publications", "talks", "experience", "education", "contact"];
+  const sectionIds = ["home", "about", "experience", "projects", "publications", "talks", "education", "contact"];
 
   document.addEventListener("keydown", (e) => {
     if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
