@@ -161,21 +161,6 @@ document.addEventListener("click", async (e) => {
   await runSceneTransition(go);
 });
 
-const introStage = document.querySelector(".intro-stage");
-if (introStage && spotPointerOk()) {
-  introStage.addEventListener(
-    "pointermove",
-    (e) => {
-      const r = introStage.getBoundingClientRect();
-      const x = ((e.clientX - r.left) / Math.max(r.width, 1)) * 100;
-      const y = ((e.clientY - r.top) / Math.max(r.height, 1)) * 100;
-      introStage.style.setProperty("--spot-x", `${Math.max(0, Math.min(100, x))}%`);
-      introStage.style.setProperty("--spot-y", `${Math.max(0, Math.min(100, y))}%`);
-    },
-    { passive: true }
-  );
-}
-
 // ── Scroll progress bar ──
 const scrollProgress = document.getElementById("scrollProgress");
 if (scrollProgress) {
