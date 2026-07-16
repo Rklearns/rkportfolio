@@ -212,6 +212,15 @@ name {
   align-items: baseline;
 }
 
+a.experience-item {
+  text-decoration: none;
+  color: inherit;
+}
+
+a.experience-item:hover .experience-title {
+  color: var(--orange);
+}
+
 .experience-date {
   color: var(--muted);
   font-size: 0.9rem;
