@@ -184,11 +184,7 @@ name {
   transition: opacity 0.2s ease-in-out;
 }
 
-.publication-item:hover .publication-image img {
-  opacity: 0.9;
-}
-
-.publication-item:hover papertitle {
+papertitle:hover {
   color: var(--orange);
 }
 
