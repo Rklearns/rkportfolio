@@ -6,352 +6,226 @@
     <title>Rishit Kar</title>
     <meta
       name="description"
-      content="Portfolio of Rishit Kar, computer engineering student focused on AI research, backend systems, and software engineering."
+      content="Rishit Kar is a computer engineering undergraduate working on software engineering, agentic systems, and applied machine learning research."
     />
     <link rel="icon" type="image/svg+xml" href="assets/site-icon.svg?v=3" />
     <link rel="icon" type="image/png" sizes="512x512" href="assets/site-icon.png?v=3" />
     <link rel="shortcut icon" href="site-icon.ico?v=3" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;700&family=Oswald:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;400;500;600&family=Shadows+Into+Light&family=Syne:wght@400;600;800&display=swap"
-      rel="stylesheet"
-    />
-    <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "wo7sazp93b");
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2YQS5828VP');
     </script>
     <link rel="stylesheet" href="styles.css" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Rishit Kar",
-        "email": "emailrishitkar@gmail.com",
-        "sameAs": [
-          "https://www.linkedin.com/in/rishit-kar-786495286",
-          "https://github.com/rklearns",
-          "https://scholar.google.com/citations?user=eMHI4WgAAAAJ&hl=en",
-          "https://orcid.org/0009-0009-9379-5888"
-        ],
-        "jobTitle": "Computer Engineering Undergraduate",
-        "affiliation": {
-          "@type": "CollegeOrUniversity",
-          "name": "Dwarkadas J. Sanghvi College of Engineering, Mumbai University"
-        },
-        "knowsAbout": [
-          "Machine learning",
-          "Medical imaging",
-          "Graph neural networks",
-          "Backend systems",
-          "Explainable AI"
-        ]
-      }
-    </script>
   </head>
   <body>
-    <button
-      type="button"
-      class="theme-toggle"
-      aria-label="Toggle color theme"
-      data-theme-toggle
-    >
-      <span class="theme-track" aria-hidden="true">
-        <span class="theme-thumb">
-          <span class="theme-icon theme-sun">
-            <svg viewBox="0 0 24 24"><path d="M12 5a1 1 0 0 1 1 1v1.05a1 1 0 1 1-2 0V6a1 1 0 0 1 1-1Zm0 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm7-4a1 1 0 0 1 0 2h-1.05a1 1 0 1 1 0-2H19ZM7.1 12a1 1 0 0 1-1 1H5a1 1 0 1 1 0-2h1.1a1 1 0 0 1 1 1Zm9.14 5.73a1 1 0 0 1 1.41 0l.74.74a1 1 0 0 1-1.41 1.41l-.74-.74a1 1 0 0 1 0-1.41ZM6.01 6.01a1 1 0 0 1 1.41 0l.74.74A1 1 0 0 1 6.75 8.16l-.74-.74a1 1 0 0 1 0-1.41Zm11.4 0a1 1 0 0 1 0 1.41l-.74.74a1 1 0 1 1-1.41-1.41l.74-.74a1 1 0 0 1 1.41 0ZM7.42 17.73a1 1 0 0 1 0 1.41l-.74.74a1 1 0 1 1-1.41-1.41l.74-.74a1 1 0 0 1 1.41 0ZM12 16.95a1 1 0 0 1 1 1V19a1 1 0 1 1-2 0v-1.05a1 1 0 0 1 1-1Z"/></svg>
-          </span>
-          <span class="theme-icon theme-moon">
-            <svg viewBox="0 0 24 24"><path d="M14.77 4.58a1 1 0 0 1 .12 1.1 6.5 6.5 0 0 0 8.43 8.43 1 1 0 0 1 1.1.12 1 1 0 0 1 .26 1.05A9.5 9.5 0 1 1 13.72 3.32a1 1 0 0 1 1.05.26Z"/></svg>
-          </span>
-        </span>
-      </span>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+      <span class="theme-toggle__sun">Light</span>
+      <span class="theme-toggle__moon">Dark</span>
     </button>
 
-    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+    <div class="page-wrapper">
 
-    <main class="page" id="home">
-      <section class="intro-stage">
-        <a class="floating-photo photo-top-left" href="#about" aria-label="Temple trip photo">
-          <img src="assets/portrait-outdoor.jpg" alt="Rishit Kar outdoors in the mountains" />
-          <span class="photo-place">Temple Trail</span>
-        </a>
-        <a class="floating-photo photo-top-middle" href="#projects" aria-label="Coding portrait">
-          <img src="assets/portrait-hoodie.png" alt="Close portrait of Rishit Kar in a hoodie" />
-          <span class="photo-place">The Grind</span>
-        </a>
-        <a class="floating-photo photo-top-right" href="#talks" aria-label="Presentation photo">
-          <img src="assets/talk-room.jpg" alt="Rishit Kar presenting in a room" />
-          <span class="photo-place">Workshop Room</span>
-        </a>
-        <a class="floating-photo photo-bottom-left" href="#contact" aria-label="Profile photo">
-          <img src="assets/profile1.jpg" alt="Portrait of Rishit Kar" />
-          <span class="photo-place">Mumbai</span>
-        </a>
-        <a class="floating-photo photo-bottom-middle" href="#projects" aria-label="Mirror photo">
-          <img src="assets/portrait-mirror.png" alt="Mirror portrait of Rishit Kar" />
-          <span class="photo-place">Campus Mirror</span>
-        </a>
+      <div class="profile-section">
+        <div class="profile-content">
+          <p class="name-heading">
+            <name>Rishit Kar</name>
+          </p>
+          <p>
+            Hi, I am Rishit Kar, a computer engineering undergraduate at
+            <a href="https://www.djsce.ac.in/" target="_blank" rel="noreferrer">DJ Sanghvi College of Engineering</a>,
+            Mumbai University.
+          </p>
+          <p>
+            I work on software engineering from first principles, backend systems, agentic systems,
+            medical AI, and practical machine learning systems that can be deployed in real-world settings.
+          </p>
+          <p>
+            Through collaborations with IIT Patna and IIT Mandi, I have worked on explainable medical AI,
+            multimodal learning, and geometric deep learning for engineering systems. I also practice
+            competitive programming and have solved more than 400 problems across Codeforces and LeetCode.
+          </p>
+          <p class="bio-links">
+            <a href="mailto:emailrishitkar@gmail.com">Email</a> &nbsp/&nbsp
+            <a href="resume/" target="_blank" rel="noreferrer">CV</a> &nbsp/&nbsp
+            <a href="https://scholar.google.com/citations?user=eMHI4WgAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a> &nbsp/&nbsp
+            <a href="https://github.com/rklearns" target="_blank" rel="noreferrer">Github</a> &nbsp/&nbsp
+            <a href="https://www.linkedin.com/in/rishit-kar-786495286" target="_blank" rel="noreferrer">LinkedIn</a> &nbsp/&nbsp
+            <a href="https://leetcode.com/u/Rkstriker/" target="_blank" rel="noreferrer">LeetCode</a>
+          </p>
+        </div>
+        <div class="profile-photo-cell">
+          <a href="assets/profile1.jpg" class="profile-photo-link">
+            <img class="profile-photo" src="assets/profile1.jpg" alt="Profile photo of Rishit Kar" />
+          </a>
+        </div>
+      </div>
 
-        <div class="intro-center">
-          <h1>Rishit Kar</h1>
-          <a class="intro-email" href="mailto:emailrishitkar@gmail.com">emailrishitkar@gmail.com</a>
+      <div class="section-header">
+        <heading>Experience</heading>
+      </div>
+      <div class="experience-list">
+        <div class="experience-item">
+          <span class="experience-date">Jun – Jul 2026</span>
+          <div class="experience-content">
+            <strong>AI Intern</strong> at <strong>Intellect Design Arena</strong><br />
+            Building agents on Purple Fabric platform for Loan Origination System.
+          </div>
+        </div>
+        <div class="experience-item">
+          <span class="experience-date">Sept 2025 – Jan 2026</span>
+          <div class="experience-content">
+            <strong>ML Intern</strong> at <strong>IIT Patna</strong> (Ms. Shivani Gupta)<br />
+            Built multimodal disease detection model on MIMIC (40K+ EHR records, 25 diseases), improving PRAUC by 2.8% via graph architecture.
+          </div>
+        </div>
+        <div class="experience-item">
+          <span class="experience-date">Jun – Jul 2025</span>
+          <div class="experience-content">
+            <strong>ML Intern</strong> at <strong>CAIR Lab, IIT Mandi</strong> (Mr. Md Umar Farooq)<br />
+            Optimized propeller geometries via DGCNN on 2048-point clouds, automating preprocessing of 400+ 3D models.
+          </div>
+        </div>
+      </div>
 
-          <div class="social-row">
-            <a href="https://www.linkedin.com/in/rishit-kar-786495286" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.93 5.38a1.56 1.56 0 0 1 0 3.12ZM5.59 9.68h2.7V18H5.6V9.68Zm4.4 0h2.58v1.14h.04c.36-.68 1.24-1.4 2.55-1.4 2.73 0 3.24 1.82 3.24 4.19V18h-2.69v-3.89c0-.93-.02-2.13-1.28-2.13-1.29 0-1.49 1.02-1.49 2.07V18H10V9.68Z"/></svg>
-            </a>
-            <a href="https://github.com/rklearns" target="_blank" rel="noreferrer" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.59 2 12.25c0 4.53 2.87 8.37 6.84 9.72.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.21-3.37-1.21-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.62.07-.62 1 .08 1.53 1.06 1.53 1.06.9 1.57 2.35 1.12 2.92.85.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.09 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 6.84c.85 0 1.7.12 2.49.36 1.9-1.33 2.74-1.05 2.74-1.05.56 1.42.21 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.96-2.34 4.82-4.57 5.08.36.32.68.95.68 1.92 0 1.39-.01 2.5-.01 2.84 0 .27.18.59.69.49A10.26 10.26 0 0 0 22 12.25C22 6.59 17.52 2 12 2Z"/></svg>
-            </a>
-            <a href="https://scholar.google.com/citations?user=eMHI4WgAAAAJ&hl=en" target="_blank" rel="noreferrer" aria-label="Google Scholar">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3Zm-5 10.18V17c0 2.21 2.24 4 5 4s5-1.79 5-4v-3.82l-5 2.73-5-2.73Z"/></svg>
-            </a>
-            <a href="https://leetcode.com/u/Rkstriker/" target="_blank" rel="noreferrer" aria-label="LeetCode">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="m13.5 4-6.2 6.2a4 4 0 0 0 0 5.6l2 2a4 4 0 0 0 5.6 0l2.1-2.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                <path d="M10 12h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-              </svg>
-            </a>
-            <a href="resume/index.html" aria-label="Resume" title="Resume">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M6.75 3.5h7.5l3 3v14H6.75v-17Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path>
-                <path d="M14.25 3.5v3h3M9.5 11h5M9.5 14h5M9.5 17h3.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
+      <div class="section-header">
+        <heading>Publications</heading>
+        <p>I am most interested in core deep learning, large language models, and agentic AI — their architectures, their theoretical foundations, and their practical applications across vision, language, and reasoning.</p>
+      </div>
+      <div class="publications-container">
+        <div class="publication-item">
+          <div class="publication-image">
+            <a href="https://github.com/Rklearns/OmniGate" target="_blank" rel="noreferrer">
+              <img src="assets/omnigate-pipeline.png" alt="OMNIGATE" loading="lazy" />
             </a>
           </div>
-
-          <nav class="center-nav" aria-label="Sections">
-            <a href="#about">about</a>
-            <a href="#experience">experience</a>
-            <a href="#projects">projects</a>
-            <a href="#publications">research</a>
-            <a href="#talks">talks</a>
-            <a href="#education">education</a>
-          </nav>
+          <div class="publication-content">
+            <a href="https://github.com/Rklearns/OmniGate" target="_blank" rel="noreferrer"><papertitle>OmniGate: Omics-Integrated Gating for Multi-Cancer Subtype Classification</papertitle></a><br />
+            <strong>Rishit Kar</strong>, Ved Ambulkar, Sargam Nagar, Varun Shenai, Ruhina Karani<br />
+            <em>PCCDA Conference</em>, 2026 &middot; SCOPUS Indexed Springer LNNS<br />
+            <a href="https://github.com/Rklearns/OmniGate" target="_blank" rel="noreferrer">Code</a><br />
+            <p>Multi-modal cancer classifier on the MLOmics benchmark (8,000+ patients, 32 cancer types). Dynamic context gating achieved best precision: GS-BRCA 0.890, GS-COAD 0.947, GS-LGG 0.985.</p>
+          </div>
         </div>
-      </section>
-
-      <section class="simple-section" id="about">
-        <a class="back-home" href="#home">↑ home</a>
-        <h2>About</h2>
-        <div class="narrow-copy">
-          <p>
-            I’m a computer engineering undergraduate at DJ Sanghvi College of
-            Engineering, Mumbai University, focused on software engineering
-            grounded in first principles, backend systems, FastAPI, Docker, and
-            practical machine learning systems that can be deployed in real-world settings.
-          </p>
-          <p>
-            Through collaborations with IIT Patna and IIT Mandi, I’ve built
-            hands-on experience in explainable medical AI, multimodal learning,
-            and geometric deep learning for engineering systems, while
-            strengthening my software engineering and CS fundamentals. I also
-            practice competitive programming and have solved more than 400
-            problems across Codeforces and LeetCode.
-          </p>
+        <div class="publication-item">
+          <div class="publication-image">
+            <a href="https://arxiv.org/abs/2603.15642" target="_blank" rel="noreferrer">
+              <img src="assets/cranimem.png" alt="CraniMem" loading="lazy" />
+            </a>
+          </div>
+          <div class="publication-content">
+            <a href="https://arxiv.org/abs/2603.15642" target="_blank" rel="noreferrer"><papertitle>CraniMem: Cranial Inspired Gated and Bounded Memory for Agentic Systems</papertitle></a><br />
+            Pearl Mody, Mihir Panchal, <strong>Rishit Kar</strong>, Kiran Bhowmick, Ruhina Karani<br />
+            <em>ICLR Memagents Workshop</em>, 2026 &middot; Published<br />
+            <a href="https://arxiv.org/abs/2603.15642" target="_blank" rel="noreferrer">Arxiv</a> &nbsp/&nbsp
+            <a href="https://iclr.cc/virtual/2026/10021260" target="_blank" rel="noreferrer">Workshop</a> &nbsp/&nbsp
+            <a href="https://github.com/Rklearns" target="_blank" rel="noreferrer">Code</a> &nbsp/&nbsp
+            <a href="https://pypi.org/project/cranimem/" target="_blank" rel="noreferrer">PyPI</a> &nbsp/&nbsp
+            <button type="button" class="bibtex-btn" data-bibtex="@misc{mody2026cranimemcranialinspiredgated, title={CraniMem: Cranial Inspired Gated and Bounded Memory for Agentic Systems}, author={Pearl Mody and Mihir Panchal and Rishit Kar and Kiran Bhowmick and Ruhina Karani}, year={2026}, eprint={2603.15642}, archivePrefix={arXiv}, primaryClass={cs.AI}, url={https://arxiv.org/abs/2603.15642}}">BibTeX</button><br />
+            <p>Neuro-inspired gated memory with utility filtering, episodic buffering, and pruned knowledge-graph consolidation. Evaluated on 100 HotPotQA samples across Qwen, Gemma, and Mistral, achieving F1 0.312 vs 0.068 baseline.</p>
+          </div>
         </div>
-      </section>
+      </div>
 
-      <section class="simple-section" id="experience">
-        <a class="back-home" href="#home">↑ home</a>
-        <h2>Experience</h2>
-        <div class="research-list research-list--tight">
-          <article class="research-entry">
-            <h3>Intellect Design Arena</h3>
-            <p class="entry-meta">Software AI Intern · Jun 2026 – present</p>
-            <p>Building agents on Purple Fabric platform for Loan Origination System</p>
-          </article>
-          <article class="research-entry">
-            <h3>Indian Institute of Technology Patna</h3>
-            <p class="entry-meta">AI Intern · Sept 2025 – Jan 2026</p>
-            <p class="entry-meta">Supervised by Dr. Joydeep Chandra · multimodal AI</p>
-            <p>
-              Multimodal ML (GNNs, temporal modeling) for chest X-ray disease prediction; emphasis on explainability for
-              clinical use.
-            </p>
-          </article>
-          <article class="research-entry">
-            <h3>CAIR Lab, Indian Institute of Technology Mandi</h3>
-            <p class="entry-meta">ML Intern · Jun – Jul 2025</p>
-            <p class="entry-meta">Supervised by Dr. Jagadeesh Kadiyam · propeller optimization</p>
-            <p>
-              CAIR Lab: geometric deep learning review, DGCNN on 3D propeller data, and feature work on complex
-              geometries.
-            </p>
-            <div class="media-scroll" id="mandiGallery">
-              <div class="media-track" id="mandiGalleryTrack">
-                <img src="assets/mandi/IMG_1257.jpg" alt="IIT Mandi campus" loading="lazy" />
-                <img src="assets/mandi/IMG_3423.heic" alt="IIT Mandi lab" loading="lazy" />
-                <img src="assets/mandi/IMG_3653.heic" alt="IIT Mandi scenery" loading="lazy" />
-                <img src="assets/mandi/IMG_3790.jpg" alt="IIT Mandi work" loading="lazy" />
-                <img src="assets/mandi/PHOTO-2025-06-04-12-30-22.JPG" alt="IIT Mandi group" loading="lazy" />
-              </div>
-            </div>
-          </article>
+      <div class="section-header">
+        <heading>Projects</heading>
+      </div>
+      <div class="publications-container">
+        <div class="publication-item">
+          <div class="publication-image">
+            <a href="https://github.com/Rklearns/clipper-dev" target="_blank" rel="noreferrer">
+              <img src="assets/project-clipper.svg" alt="Clipper-dev" loading="lazy" />
+            </a>
+          </div>
+          <div class="publication-content">
+            <a href="https://github.com/Rklearns/clipper-dev" target="_blank" rel="noreferrer"><papertitle>Clipper-dev</papertitle></a><br />
+            Cross-platform clipboard manager CLI for developers with persistent history tracking, fuzzy search, and structured content organization. Published as a Python package on PyPI with 5,000+ downloads. Features include history browser, statistics dashboard, and interactive TUI.<br />
+            <a href="https://github.com/Rklearns/clipper-dev" target="_blank" rel="noreferrer">Code</a> &nbsp/&nbsp
+            <a href="https://pypi.org/project/clipper-dev/" target="_blank" rel="noreferrer">PyPI</a>
+          </div>
         </div>
-      </section>
-
-      <section class="simple-section" id="projects">
-        <a class="back-home" href="#home">↑ home</a>
-        <h2>Projects</h2>
-        <div class="project-list">
-          <article class="project-entry clickable-card" data-href="https://github.com/Rklearns" data-external="true" tabindex="0" role="link" aria-label="Open OmniGate on GitHub">
-            <div class="project-shot">
-              <img src="assets/project-udp.png" alt="OmniGate thumbnail" />
-            </div>
-            <h3>OmniGate</h3>
-            <p class="subtle-link">Open on GitHub</p>
-            <p>
-              Built OMNIGATE for multi-modal cancer subtype classification using
-              mRNA, miRNA, CNV, and methylation data, with dynamic context
-              gating, multi-objective optimization, and biomarker-focused
-              explainability.
-            </p>
-          </article>
-
-          <article class="project-entry clickable-card" data-href="https://github.com/Rklearns/clipper-dev" data-external="true" tabindex="0" role="link" aria-label="Open Clipper-dev on GitHub">
-            <div class="project-shot">
-              <img src="assets/project-clipper.svg" alt="Clipper-dev thumbnail" />
-            </div>
-            <h3>Clipper-dev</h3>
-            <p class="subtle-link">pypi.org/project/clipper-dev</p>
-            <p>
-              Developer-focused CLI/TUI clipboard manager with persistent
-              history, interactive search, restore workflows, and 5000+
-              downloads on PyPI.
-            </p>
-          </article>
-
-          <article class="project-entry clickable-card" data-href="https://github.com/Rklearns/Chest-X-Ray-Detection" data-external="true" tabindex="0" role="link" aria-label="Open Multi-Model Pneumonia Diagnosis on GitHub">
-            <div class="project-shot">
-              <img src="assets/project-chestxray.svg" alt="Chest X-ray thumbnail" />
-            </div>
-            <h3>Multi-Model Pneumonia Diagnosis</h3>
-            <p class="subtle-link">github.com/Rklearns/Chest-X-Ray-Detection</p>
-            <p>
-              Deep learning ensemble for medical image classification using
-              custom CNN, ResNet, and Graph Neural Networks on chest X-ray
-              data.
-            </p>
-          </article>
-
-          <article class="project-entry clickable-card" data-href="https://github.com/Rklearns/Custom-Protocol-Architecture" data-external="true" tabindex="0" role="link" aria-label="Open Custom Reliable UDP Protocol on GitHub">
-            <div class="project-shot">
-              <img src="assets/project-omnigate.svg" alt="Reliable UDP thumbnail" />
-            </div>
-            <h3>Custom Reliable UDP Protocol</h3>
-            <p class="subtle-link">github.com/Rklearns/Custom-Protocol-Architecture</p>
-            <p>
-              High-performance reliable transport protocol with sliding window
-              flow control, retransmission, and SHA-256 checksums.
-            </p>
-          </article>
+        <div class="publication-item">
+          <div class="publication-image">
+            <a href="https://github.com/Rklearns/Chest-X-Ray-Detection" target="_blank" rel="noreferrer">
+              <img src="assets/project-chestxray.svg" alt="Chest X-ray" loading="lazy" />
+            </a>
+          </div>
+          <div class="publication-content">
+            <a href="https://github.com/Rklearns/Chest-X-Ray-Detection" target="_blank" rel="noreferrer"><papertitle>Multi-Model Pneumonia Diagnosis</papertitle></a><br />
+            Tested multiple deep learning models for pneumonia classification on 5,000+ chest X-ray images. Implemented a multimodal pipeline integrating spatial attention features with a Graph Attention Network (GAT). Custom CNN achieved 7–9% higher accuracy over ResNet and GNN baselines.<br />
+            <a href="https://github.com/Rklearns/Chest-X-Ray-Detection" target="_blank" rel="noreferrer">Code</a>
+          </div>
         </div>
-      </section>
-
-      <section class="simple-section" id="publications">
-        <a class="back-home" href="#home">↑ home</a>
-        <h2>Research</h2>
-        <div class="research-list">
-          <article class="research-entry">
-            <h3>
-              <a
-                class="title-link"
-                href="https://arxiv.org/abs/2603.15642"
-                target="_blank"
-                rel="noreferrer"
-                >CraniMem: Cranial Inspired Gated and Bounded Memory for Agentic Systems</a>
-            </h3>
-            <p>Pearl Mody, Mihir Panchal, <strong>Rishit Kar</strong>, Kiran Bhowmick, Ruhina Karani · <a class="title-link" href="https://iclr.cc/virtual/2026/10021260" target="_blank" rel="noreferrer">ICLR Memagents Workshop, 2026, Brazil</a> · Status: Published</p>
-          </article>
-          <article class="research-entry">
-            <h3>
-              <a
-                class="title-link"
-                href="https://github.com/Rklearns"
-                target="_blank"
-                rel="noreferrer"
-                >OMNIGATE: Omics-Integrated Gating for Explainable Multi-Cancer Subtype Classification</a>
-            </h3>
-            <p><strong>Rishit Kar</strong>, Ved Ambulkar, Sargam Nagar, Varun Shenai, Ruhina Karani · <a class="title-link" href="https://www.scrs.in/conference/pccda2026" target="_blank" rel="noreferrer">PCCDA Conference, South Korea</a> · SCOPUS Indexed Springer LNNS Conference · Status: Accepted</p>
-          </article>
+        <div class="publication-item">
+          <div class="publication-image">
+            <a href="https://github.com/Rklearns/Custom-Protocol-Architecture" target="_blank" rel="noreferrer">
+              <img src="assets/project-omnigate.svg" alt="Custom UDP" loading="lazy" />
+            </a>
+          </div>
+          <div class="publication-content">
+            <a href="https://github.com/Rklearns/Custom-Protocol-Architecture" target="_blank" rel="noreferrer"><papertitle>Custom Reliable UDP Protocol</papertitle></a><br />
+            Reliable transport protocol with sliding-window flow control, retransmission, packet ordering, and SHA-256 integrity checks.<br />
+            <a href="https://github.com/Rklearns/Custom-Protocol-Architecture" target="_blank" rel="noreferrer">Code</a>
+          </div>
         </div>
-      </section>
+      </div>
 
-      <section class="simple-section" id="talks">
-        <a class="back-home" href="#home">↑ home</a>
-        <h2>Talks</h2>
-        <div class="talk-grid">
-          <article class="talk-card clickable-card" data-href="https://luma.com/l7typahe" data-external="true" tabindex="0" role="link" aria-label="Open PySpark talk">
-            <div class="talk-shot">
-              <img src="assets/talk-room.jpg" alt="PySpark talk" />
-            </div>
-            <div class="talk-body">
-              <h3>Big Data without the Big Headache: PySpark for Beginners</h3>
-              <p class="talk-meta">Workshop · IDfy · hosted by Mumpy</p>
-            </div>
-          </article>
-          <article class="talk-card clickable-card" data-href="https://youtu.be/wC1QdWBILLQ?si=aN7w8ezQgwCloyW4" data-external="true" tabindex="0" role="link" aria-label="Open Cold Mailing talk">
-            <div class="talk-shot">
-              <img src="assets/ref/image.png" alt="Cold Mailing talk" />
-            </div>
-            <div class="talk-body">
-              <h3>Cold Mailing for Research Internships and Profile Building</h3>
-              <p class="talk-meta">Webinar · Google Meet · ACM College Committee</p>
-            </div>
-          </article>
+      <div class="section-header">
+        <heading>Talks</heading>
+      </div>
+      <div class="publications-container">
+        <div class="publication-item">
+          <div class="publication-image">
+            <a href="https://luma.com/l7typahe" target="_blank" rel="noreferrer">
+              <img src="assets/talk-room.jpg" alt="PySpark workshop" loading="lazy" />
+            </a>
+          </div>
+          <div class="publication-content">
+            <a href="https://luma.com/l7typahe" target="_blank" rel="noreferrer"><papertitle>Big Data without the Big Headache: PySpark for Beginners</papertitle></a><br />
+            <em>Workshop &middot; IDfy &middot; Mumpy</em><br />
+            An introductory workshop on PySpark, distributed data processing, and practical big-data workflows.<br />
+            <a href="https://luma.com/l7typahe" target="_blank" rel="noreferrer">Event</a>
+          </div>
         </div>
-      </section>
-
-      <section class="simple-section" id="education">
-        <a class="back-home" href="#home">↑ home</a>
-        <h2>Education</h2>
-        <div class="research-list research-list--tight">
-          <article class="research-entry">
-            <h3>Dwarkadas Jivanlal Sanghvi College of Engineering, Mumbai</h3>
-            <p class="entry-meta">BTech, Computer Engineering · 2023 – 2027 · CGPA 9.14</p>
-            <p class="por-heading">Position of responsibility</p>
-            <p class="entry-meta por-role">Research Head · <a class="title-link" href="https://djsacm-research.github.io" target="_blank" rel="noreferrer">DJS ACM</a></p>
-            <p>
-              Guiding 15+ students in ML, facilitating research and guidance via talks.
-            </p>
-          </article>
+        <div class="publication-item">
+          <div class="publication-image">
+            <a href="https://youtu.be/wC1QdWBILLQ?si=aN7w8ezQgwCloyW4" target="_blank" rel="noreferrer">
+              <img src="assets/ref/image.png" alt="Cold Mailing" loading="lazy" />
+            </a>
+          </div>
+          <div class="publication-content">
+            <a href="https://youtu.be/wC1QdWBILLQ?si=aN7w8ezQgwCloyW4" target="_blank" rel="noreferrer"><papertitle>Cold Mailing for Research Internships and Profile Building</papertitle></a><br />
+            <em>Webinar &middot; ACM College Committee</em><br />
+            A talk on finding research opportunities, writing effective outreach, and building a student research profile.<br />
+            <a href="https://youtu.be/wC1QdWBILLQ?si=aN7w8ezQgwCloyW4" target="_blank" rel="noreferrer">Video</a>
+          </div>
         </div>
-      </section>
+      </div>
 
-      <section class="simple-section contact-section" id="contact">
-        <a class="back-home" href="#home">↑ home</a>
-        <div class="contact-footer">
-          <span class="contact-badge">Contact</span>
-          <h2 class="contact-heading">Get in Touch</h2>
-          <p class="contact-lede">
-            Want to chat?
-            <a class="contact-link" href="mailto:emailrishitkar@gmail.com">Send me an email</a>
-            and I’ll respond.
-          </p>
-          <p class="contact-sub">Open to research, software roles, and collaborations.</p>
+      <div class="section-header">
+        <heading>Education</heading>
+      </div>
+      <div class="education-content">
+        <div class="publication-item">
+          <div class="publication-content">
+            <papertitle>BTech, Computer Engineering</papertitle><br />
+            Dwarkadas Jivanlal Sanghvi College of Engineering, Mumbai &middot; 2023 – 2027 &middot; CGPA 9.14<br />
+            <strong>Research Head</strong> at <a href="https://djsacm-research.github.io" target="_blank" rel="noreferrer">DJS ACM</a><br />
+            Mentored 15+ students in Machine Learning, facilitating research projects and collaborating with college professors to advance ML research within the community.
+          </div>
         </div>
-        <footer class="site-end" aria-label="Site footer">
-          <p class="site-end__line">
-            <span>© 2026 Rishit Kar</span>
-            <span class="site-end__dot" aria-hidden="true">·</span>
-            <span>CV / résumé on request</span>
-          </p>
-        </footer>
-      </section>
-    </main>
+      </div>
 
-    <div class="scene-transition" id="sceneTransition" aria-hidden="true" hidden>
-      <div class="scene-transition__shade"></div>
-      <div class="scene-transition__paper" aria-hidden="true">
-        <span class="scene-transition__rule"></span>
+      <div class="footer">
+        <p>
+          Open to research, software engineering roles, and collaborations.
+          <a href="mailto:emailrishitkar@gmail.com">emailrishitkar@gmail.com</a>
+        </p>
       </div>
     </div>
 
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="script.js"></script>
   </body>
 </html>
