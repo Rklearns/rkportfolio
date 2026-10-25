@@ -18,7 +18,7 @@
   --bg: #ffffff;
   --text: #111111;
   --muted: #666666;
-  --blue: #e67e22;
+  --blue: #1772d0;
   --orange: #f09228;
   --rule: #e8e8e8;
   --toggle-bg: rgba(255, 255, 255, 0.88);
@@ -185,6 +185,7 @@ name {
 
 .profile-content {
   flex: 1;
+  min-width: 0;
 }
 
 .profile-content .name-heading {
@@ -258,9 +259,9 @@ name {
 
 .flying-harry-track {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 120px;
-  margin: 8px 0 0 calc(50% - 50vw);
+  margin: 8px 0 0;
   overflow: hidden;
 }
 
@@ -271,13 +272,12 @@ name {
   width: 112px;
   height: 112px;
   object-fit: contain;
-  mix-blend-mode: multiply;
   animation: broom-flight 16s linear infinite;
 }
 
 @keyframes broom-flight {
-  from { transform: translateX(-100%) translateY(5px) rotate(-3deg); }
-  to { transform: translateX(100vw) translateY(-5px) rotate(3deg); }
+  from { left: -112px; transform: translateY(5px) rotate(-3deg); }
+  to { left: calc(100% - 112px); transform: translateY(-5px) rotate(3deg); }
 }
 
 .magic-spark {
