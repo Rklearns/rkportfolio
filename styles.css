@@ -179,7 +179,7 @@ name {
   display: flex;
   gap: 20px;
   align-items: center;
-  margin-bottom: 60px;
+  margin-bottom: 24px;
   padding: 0 20px;
 }
 
@@ -261,41 +261,6 @@ name {
   animation: wizard-float 4s ease-in-out infinite;
 }
 
-.svg-definitions {
-  position: absolute;
-  left: -1px;
-  top: -1px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.flying-harry-track {
-  position: relative;
-  left: 50%;
-  width: 0;
-  height: 0;
-  margin: 0;
-  overflow: visible;
-}
-
-.flying-harry-track img {
-  position: absolute;
-  top: -60px;
-  left: 0;
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  filter: url(#white-background-cutout);
-  animation: broom-flight 4s linear infinite;
-}
-
-@keyframes broom-flight {
-  from { transform: translateX(calc(-50vw - 60px)) translateY(2px) rotate(-3deg); }
-  to { transform: translateX(calc(50vw + 60px)) translateY(-2px) rotate(3deg); }
-}
-
 .magic-spark {
   position: absolute;
   z-index: 1;
@@ -325,10 +290,6 @@ name {
     animation: none;
   }
 
-  .flying-harry-track img {
-    transform: translateX(-50%);
-    animation: none;
-  }
 }
 
 .publications-container {
