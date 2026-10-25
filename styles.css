@@ -179,7 +179,7 @@ name {
   display: flex;
   gap: 20px;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 16px;
   padding: 0 20px;
 }
 
@@ -264,8 +264,8 @@ name {
 .flying-harry-track {
   position: relative;
   width: 100vw;
-  height: 80px;
-  margin: 0 0 10px calc(50% - 50vw);
+  height: 60px;
+  margin: 0 0 0 calc(50% - 50vw);
   overflow: hidden;
 }
 
@@ -273,15 +273,15 @@ name {
   position: absolute;
   top: 0;
   left: 0;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
   animation: broom-flight 4s linear infinite;
 }
 
 @keyframes broom-flight {
-  from { left: -80px; transform: translateY(4px) rotate(-3deg); }
-  to { left: calc(100% - 80px); transform: translateY(-4px) rotate(3deg); }
+  from { left: -60px; transform: translateY(2px) rotate(-3deg); }
+  to { left: calc(100% - 60px); transform: translateY(-2px) rotate(3deg); }
 }
 
 .magic-spark {
@@ -314,7 +314,7 @@ name {
   }
 
   .flying-harry-track img {
-    left: calc(50% - 40px);
+    left: calc(50% - 30px);
     animation: none;
   }
 }
