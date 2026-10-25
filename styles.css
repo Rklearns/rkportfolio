@@ -175,10 +175,9 @@ name {
 }
 
 .profile-section {
-  position: relative;
   display: flex;
   gap: 20px;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 24px;
   padding: 0 20px;
 }
@@ -189,8 +188,8 @@ name {
 }
 
 .profile-content .name-heading {
-  text-align: center;
-  margin-bottom: 20px;
+  text-align: left;
+  margin: 0 0 16px;
 }
 
 .profile-content .bio-links {
@@ -221,8 +220,8 @@ name {
 }
 
 .profile-photo {
-  width: 100%;
-  max-width: 180px;
+  width: 160px;
+  max-width: 100%;
   display: block;
   border-radius: 50%;
   aspect-ratio: 1;
@@ -230,22 +229,25 @@ name {
 }
 
 .profile-photo-link {
-  display: inline-block;
+  display: block;
+  width: 160px;
+  max-width: 100%;
 }
 
 .profile-photo-cell {
-  flex: 0 0 auto;
+  display: flex;
+  flex: 0 0 180px;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
   text-align: center;
 }
 
 .wizard-illustration {
-  position: absolute;
-  top: 32px;
-  right: -145px;
+  position: relative;
   width: 112px;
   height: 148px;
-  display: grid;
-  place-items: center;
+  flex: 0 0 148px;
 }
 
 .wizard-mascot {
@@ -459,26 +461,19 @@ body[data-theme="dark"] .theme-toggle__moon {
 
   .profile-photo-cell {
     width: 100% !important;
+    flex-basis: auto;
     padding: 20px 0 !important;
     text-align: center;
   }
 
   .profile-photo {
-    max-width: 300px;
+    width: 200px;
+    max-width: 100%;
     margin: 0 auto;
   }
 
   .profile-photo-link {
-    display: block;
-  }
-
-  .wizard-illustration {
-    position: relative;
-    top: auto;
-    right: auto;
-    width: 112px;
-    height: 148px;
-    margin: 16px auto 0;
+    width: 200px;
   }
 
   .section-header {
@@ -536,17 +531,6 @@ body[data-theme="dark"] .theme-toggle__moon {
 
   .education-content {
     padding: 0 15px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1199px) {
-  .wizard-illustration {
-    position: relative;
-    top: auto;
-    right: auto;
-    width: 112px;
-    height: 148px;
-    margin: 10px auto 0;
   }
 }
 
