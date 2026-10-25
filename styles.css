@@ -241,21 +241,11 @@ name {
 .wizard-illustration {
   position: absolute;
   top: 32px;
-  right: -180px;
-  width: 180px;
-  height: 150px;
+  right: -145px;
+  width: 112px;
+  height: 148px;
   display: grid;
   place-items: center;
-}
-
-.wizard-magic-art {
-  position: absolute;
-  top: 4px;
-  left: 0;
-  z-index: 1;
-  width: 154px;
-  height: 140px;
-  object-fit: contain;
 }
 
 .wizard-mascot {
@@ -274,8 +264,8 @@ name {
 .flying-harry-track {
   position: relative;
   width: 100vw;
-  height: 120px;
-  margin: 8px 0 32px calc(50% - 50vw);
+  height: 80px;
+  margin: 0 0 10px calc(50% - 50vw);
   overflow: hidden;
 }
 
@@ -283,15 +273,15 @@ name {
   position: absolute;
   top: 0;
   left: 0;
-  width: 112px;
-  height: 112px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
-  animation: broom-flight 7s linear infinite;
+  animation: broom-flight 4s linear infinite;
 }
 
 @keyframes broom-flight {
-  from { left: -112px; transform: translateY(5px) rotate(-3deg); }
-  to { left: calc(100% - 112px); transform: translateY(-5px) rotate(3deg); }
+  from { left: -80px; transform: translateY(4px) rotate(-3deg); }
+  to { left: calc(100% - 80px); transform: translateY(-4px) rotate(3deg); }
 }
 
 .magic-spark {
@@ -324,7 +314,7 @@ name {
   }
 
   .flying-harry-track img {
-    left: calc(50% - 56px);
+    left: calc(50% - 40px);
     animation: none;
   }
 }
@@ -513,8 +503,8 @@ body[data-theme="dark"] .theme-toggle__moon {
     position: relative;
     top: auto;
     right: auto;
-    width: 180px;
-    height: 150px;
+    width: 112px;
+    height: 148px;
     margin: 16px auto 0;
   }
 
@@ -578,9 +568,11 @@ body[data-theme="dark"] .theme-toggle__moon {
 
 @media (min-width: 768px) and (max-width: 1199px) {
   .wizard-illustration {
-    position: static;
-    width: 180px;
-    height: 150px;
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 112px;
+    height: 148px;
     margin: 10px auto 0;
   }
 }
