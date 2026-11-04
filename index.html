@@ -8,6 +8,11 @@
       name="description"
       content="Rishit Kar is a computer engineering undergraduate working on software engineering, agentic systems, and applied machine learning research."
     />
+    <script>
+      if (window.location.pathname.endsWith("/index.html")) {
+        window.history.replaceState(null, "", window.location.pathname.slice(0, -"index.html".length) + window.location.search + window.location.hash);
+      }
+    </script>
     <link rel="icon" type="image/svg+xml" href="assets/site-icon.svg?v=3" />
     <link rel="icon" type="image/png" sizes="512x512" href="assets/site-icon.png?v=3" />
     <link rel="shortcut icon" href="site-icon.ico?v=3" />
