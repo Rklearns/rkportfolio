@@ -1,0 +1,128 @@
+.mandi-page {
+  width: min(1080px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 28px 0 48px;
+}
+
+.mandi-back,
+.mandi-footer a {
+  font-size: 14px;
+}
+
+.mandi-intro {
+  max-width: 700px;
+  margin: 52px 0 34px;
+}
+
+.mandi-kicker {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+.mandi-intro h1 {
+  margin: 0 0 14px;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.mandi-intro > p:last-child {
+  max-width: 600px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.mandi-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 20px;
+}
+
+.mandi-photo {
+  min-width: 0;
+  margin: 0;
+}
+
+.mandi-photo a {
+  display: block;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--rule);
+}
+
+.mandi-photo img {
+  display: block;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.mandi-photo a:hover img {
+  opacity: 0.92;
+  transform: scale(1.025);
+}
+
+.mandi-photo figcaption {
+  padding-top: 9px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.mandi-photo--wide {
+  grid-column: span 2;
+}
+
+.mandi-photo--wide img {
+  height: 300px;
+  object-fit: contain;
+  background: #171717;
+}
+
+.mandi-footer {
+  margin-top: 46px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+}
+
+@media (max-width: 760px) {
+  .mandi-page {
+    width: min(100% - 30px, 620px);
+    padding-top: 20px;
+  }
+
+  .mandi-intro {
+    margin-top: 38px;
+  }
+
+  .mandi-photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 14px;
+  }
+
+  .mandi-photo img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mandi-photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mandi-photo--wide {
+    grid-column: auto;
+  }
+
+  .mandi-photo img,
+  .mandi-photo--wide img {
+    height: auto;
+    max-height: 460px;
+    object-fit: contain;
+  }
+}
