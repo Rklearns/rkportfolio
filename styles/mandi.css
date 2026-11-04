@@ -131,6 +131,11 @@ body[data-theme="dark"] .visit-page--deepmind {
   object-fit: cover;
 }
 
+.visit-page--mandi .visit-hero__image img {
+  object-fit: contain;
+  background: var(--page-wash);
+}
+
 .visit-hero__image--poster img {
   object-position: center 26%;
 }
