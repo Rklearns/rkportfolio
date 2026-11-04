@@ -7,7 +7,7 @@
     <title>IIT Mandi Visit · Rishit Kar</title>
     <link rel="icon" type="image/svg+xml" href="assets/site-icon.svg?v=3" />
     <link rel="stylesheet" href="styles.css?v=11" />
-    <link rel="stylesheet" href="styles/mandi.css?v=1" />
+    <link rel="stylesheet" href="styles/mandi.css?v=2" />
   </head>
   <body>
     <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
@@ -15,15 +15,32 @@
       <span class="theme-toggle__moon">Dark</span>
     </button>
 
-    <main class="mandi-page">
-      <a class="mandi-back" href="index.html">← Back to portfolio</a>
-      <header class="mandi-intro">
-        <p class="mandi-kicker">FIELD NOTES · SUMMER 2025</p>
-        <h1>IIT Mandi, in frames</h1>
-        <p>A summer visiting research internship, new questions about machine learning for 3D geometry, and a few moments from campus and beyond.</p>
+    <main class="visit-page visit-page--mandi">
+      <a class="visit-back" href="index.html">← Back to portfolio</a>
+      <header class="visit-hero">
+        <div class="visit-hero__copy">
+          <p class="visit-kicker"><span></span> FIELD NOTES · SUMMER 2025</p>
+          <h1>A summer in the hills.<br /><em>A turn in the road.</em></h1>
+          <p class="visit-deck">IIT Mandi was where I first explored machine learning for 3D geometry—and began to understand which kinds of problems I wanted to keep pursuing.</p>
+          <div class="visit-tags"><span>Visiting research intern</span><span>Kamand, Himachal Pradesh</span></div>
+        </div>
+        <figure class="visit-hero__image">
+          <img src="assets/mandi-gallery/08-selfie.jpg" alt="Rishit at IIT Mandi with the hills behind him" />
+          <figcaption>A little sky, a lot of hills.</figcaption>
+        </figure>
       </header>
 
-      <section class="mandi-photo-grid" aria-label="Photos from the IIT Mandi visit">
+      <section class="visit-note" aria-label="Research reflections">
+        <p class="visit-note__label">THE WORK &amp; THE TAKEAWAY</p>
+        <div>
+          <h2>Learning what pulls you in is part of the work.</h2>
+          <p>At IIT Mandi, I explored how machine learning could be applied to 3D propellers and geometry, and carried out a literature review on ML for amphibian propellers. It was a valuable engineering challenge, but I soon realized that ML for 3D geometry wasn’t the direction I felt most drawn to 🙂.</p>
+          <p>That clarity mattered. My later work with multimodal clinical data and graph learning helped me find my way toward machine learning and core deep learning—the areas I’m excited to keep exploring.</p>
+        </div>
+      </section>
+
+      <div class="gallery-heading"><p class="visit-kicker"><span></span> THE CAMERA ROLL</p><h2>Research days &amp; everything around them</h2><p>Campus, the work, a few walks, and the meals in between.</p></div>
+      <section class="visit-gallery visit-gallery--mandi" aria-label="Photos from the IIT Mandi visit">
         <figure class="mandi-photo">
           <a href="assets/mandi-gallery/01-campus-view.jpg" target="_blank" rel="noreferrer"><img src="assets/mandi-gallery/01-campus-view.jpg" alt="A wide view across the IIT Mandi campus and surrounding hills" loading="lazy" /></a>
           <figcaption>Campus life in the hills.</figcaption>
@@ -65,7 +82,7 @@
           <figcaption>And, of course, the food.</figcaption>
         </figure>
       </section>
-      <footer class="mandi-footer"><a href="index.html">← Back to Rishit’s portfolio</a></footer>
+      <footer class="visit-footer"><a href="index.html">← Back to Rishit’s portfolio</a><span>FIELD NOTES · IIT MANDI</span></footer>
     </main>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
