@@ -182,6 +182,38 @@ name {
   padding: 0 20px;
 }
 
+.hobby-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 28px;
+  margin: 0 20px 28px;
+  border-top: 1px solid var(--rule);
+}
+
+.hobby-item {
+  padding: 16px 0 10px;
+}
+
+.hobby-label {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.hobby-item p {
+  margin: 7px 0 0;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+@media (max-width: 560px) {
+  .hobby-list {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
 .profile-content {
   flex: 1;
   min-width: 0;
